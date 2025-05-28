@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 # Library           DataDriver    file=../Utility/sample.csv
+
 *** Variables ***
 ${threelines}    xpath = (//*[@class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"])[1]
 ${Bussiness}    xpath = //*[@class="MuiList-root MuiList-padding css-1ontqvh"]//child::li[6]
@@ -17,7 +18,12 @@ ${submit}    xpath = //*[@class="MuiButtonBase-root MuiButton-root MuiButton-con
 ${IMAGE_PATH}    ${CURDIR}${/}samplepic.jpg
 ${search_Box}    xpath = //input[@class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedStart css-162edyi"]
 ${search_element}    xpath = //*[@class="MuiTable-root css-1owb465"]//child :: tbody
-
+${delete_icon}    xpath = (//*[@class="MuiBox-root css-1i27l4i"]//child::button[2])[last()]
+${delete_button}    xpath = //*[@class="MuiDialogActions-root MuiDialogActions-spacing css-33pgcr"]//child::button[2]
+${Edit_button}    xpath = (//*[@class="MuiBox-root css-1i27l4i"]//button[1])[last()]
+${Edit_checl}   xpath = (//*[@class="MuiTableBody-root css-1xnox0e"]//child::td[1]//p)[last()]
+${update_button}    xpath = (//*[@style="border: 2px dotted rgb(211, 211, 211); padding: 20px; border-radius: 8px;"]//child::button)[2]
+${title1}   xpath = (//*[@style="border: 2px dotted rgb(211, 211, 211); padding: 20px; border-radius: 8px;"]//child::div[1]//input)[1]
 *** Keywords ***
 User visit the How It Work page By clicking on the three lines icon
     Click Element    ${threelines}
@@ -69,3 +75,21 @@ Search How It Work with Invalid Data
     Sleep    2s
     Page Should Not Contain Element    ${search_element}
 
+delete How It Work
+    ${row_count}=    Get Element Count    ${count}
+    Click Element    ${delete_icon}
+    Click Element    ${delete_button}
+    sleep    2s
+    ${row_count1}=    Get Element Count    ${count}    
+    Should Not Be Equal    ${row_count}    ${row_count1}
+
+Edit How It Work
+    [Arguments]    ${Titles}
+    Click Element    ${Edit_button}
+    Press Keys    ${Title}    CTRL+A    DELETE
+    sleep    2
+    Input Text    ${title1}    ${Titles}
+    Click Element    ${update_button}
+    Wait Until Element Is Visible    ${count}    timeout=10s
+    ${Edit_element_locator}=    Get Text    ${Edit_checl}
+    Should Be Equal    ${Titles}    ${Edit_element_locator}
