@@ -3,11 +3,10 @@ Library    SeleniumLibrary
 
 *** Variables ***
 
+
 ${url}    https://smart-cliff-admin.vercel.app/
 ${browser}    chrome
 
-${url}       https://smart-cliff-admin.vercel.app/
-${browser}   chrome
 
 
 *** Keywords ***
