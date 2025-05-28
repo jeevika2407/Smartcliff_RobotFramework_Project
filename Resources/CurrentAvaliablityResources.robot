@@ -8,7 +8,6 @@ ${password}    1234
 ${menu_button}    //button[@aria-label="open drawer"]
 
 ${menu_button}    //div[@class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-i6s8oy"]/following::button
->>>>>>> 9aae2b5 (Current Availability on 28MAY2025)
 ${bussiness}    //ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]
 ${current_availability}    //div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Current Availability']
 ${searchbox}    //input[@placeholder="Search by Skillset..."]    #search the value 
@@ -37,7 +36,7 @@ Click on Search box and Assert the Fullstack
     Input Text    ${searchbox}    Full stack
     Wait Until Element Is Visible    ${fullstack}
     Element Should Contain    ${fullstack}    Full stack
-
+    
 Click on the Add New Current Availability button and Add Form Values
     [Arguments]    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}
     Click Element    //*[@id="root"]/div[1]/main/div[2]/div[1]/div[2]/button
@@ -48,7 +47,9 @@ Click on the Add New Current Availability button and Add Form Values
     Input Text       //input[@name="experience"]  ${exp}
     Input Text       //textarea[@name="remarks"]     ${remarks}
     Click Button     ${submit_btn}
+    Page Should Contain Element    //td[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg"][1]    
     
 
+    
 
 

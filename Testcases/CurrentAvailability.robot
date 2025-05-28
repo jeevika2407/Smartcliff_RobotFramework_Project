@@ -5,38 +5,36 @@ Library          DataDriver    file=/Users/sevvelkaranpalanivetrivel/Desktop/Rob
 Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Resource   ../Resources/CurrentAvaliablityResources.robot
+Test Template    Fill Current Availability Form With Excel Data Provided
 Test setup    Open the browser with url
-Test Template    Fill Current Availability Form With Excel Data
-Test Teardown    close the broswer session
+Test Teardown    close the browser session
 
 
 *** Test Cases ***
-Verify the Current Availability Page
+Verify the Current Availability Page by Logging In
     ${username}=    Set Variable    smart@gmail.com
     ${password}=    Set Variable    1234
-    Verify the Table conist of Fullstack 
-
-Add Values into the Page
-    
+    Verify the Table conist of Fullstack and Assert Them
+    Fill Current Availability Form With Excel Data Provided
     ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}
+    Verify there is new added data in the table of Current Availability
     
 
 *** Keywords ***
-Verify the Current Availability Page
+Verify the Current Availability Page by Logging In
     ${username}=    Set Variable    smart@gmail.com
     ${password}=    Set Variable    1234
     LoginResources.fill the login form   ${username}    ${password}
     CurrentAvaliablityResources.Click on the Menu button and choose Current Availability by Clicking on the Bussiness
 
-
-Verify the Table conist of Fullstack 
+Verify the Table conist of Fullstack and Assert Them
     ${username}=    Set Variable    smart@gmail.com
     ${password}=    Set Variable    1234
     LoginResources.fill the login form   ${username}    ${password}
     CurrentAvaliablityResources.Click on the Menu button and choose Current Availability by Clicking on the Bussiness 
     CurrentAvaliablityResources.Click on Search box and Assert the Fullstack
 
-Fill Current Availability Form With Excel Data
+Fill Current Availability Form With Excel Data Provided
     [Arguments]    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}
     ${username}=    Set Variable    smart@gmail.com
     ${password}=    Set Variable    1234
