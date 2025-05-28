@@ -1,0 +1,28 @@
+1748427158254	geckodriver	INFO	Listening on 127.0.0.1:59422
+1748427158278	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/Applications/Firefox. ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/my/_xczdv396cj4lp0rs8vdvc340000gn/T/rust_mozprofileEtrHHa"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1748427159601	Marionette	INFO	Marionette enabled
+1748427160021	Marionette	INFO	Listening on port 59429
+Read port: 59429
+2025-05-28 15:42:40.185 plugin-container[48934:953489] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2025-05-28 15:42:40.185 plugin-container[48934:953489] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2025-05-28 15:42:40.194 plugin-container[48934:953489] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2025-05-28 15:42:40.194 plugin-container[48934:953489] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2025-05-28 15:42:40.194 plugin-container[48934:953487] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2025-05-28 15:42:40.194 plugin-container[48934:953487] nil host used in call to allowsAnyHTTPSCertificateForHost:
+WebDriver BiDi listening on ws://127.0.0.1:59423
+1748427160308	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:59423/devtools/browser/ae9d86de-028c-41d1-8a7e-e6d24d63c413
+2025-05-28 10:12:43.388 plugin-container[48938:953658] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2025-05-28 10:12:43.388 plugin-container[48938:953658] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2025-05-28 10:12:43.399 plugin-container[48938:953658] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2025-05-28 10:12:43.399 plugin-container[48938:953658] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2025-05-28 10:12:43.401 plugin-container[48938:953737] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2025-05-28 10:12:43.401 plugin-container[48938:953737] nil host used in call to allowsAnyHTTPSCertificateForHost:
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://smart-cliff-admin.vercel.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://smart-cliff-admin.vercel.app."
+1748427172883	Marionette	INFO	Stopped listening on port 59429
+JavaScript warning: https://smart-cliff-admin.vercel.app/static/js/main.9db60307.js, line 2: Script terminated by timeout at:
+u@https://smart-cliff-admin.vercel.app/static/js/main.9db60307.js:2:98905
+

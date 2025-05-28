@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${url}    https://smart-cliff-admin.vercel.app/
-${browser}    chrome
+${browser}    Firefox
 
 *** Keywords ***
 Open the browser with url
