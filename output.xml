@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-28T09:19:34.215956" rpa="false" schemaversion="5">
+<suite id="s1" name="LoginTest" source="D:\SmartCliff_RobotFramework_Project\Testcases\LoginTest.robot">
+<test id="s1-t1" name="Valid Login Test" line="13">
+<kw name="validate login">
+<kw name="Open the browser with url" owner="GenericResources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-28T09:19:38.207442" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-28T09:19:38.207209" elapsed="4.516826"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-28T09:19:42.724550" elapsed="0.074164"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-28T09:19:42.799117" elapsed="0.003682"/>
+</kw>
+<status status="PASS" start="2025-05-28T09:19:38.206388" elapsed="4.596951"/>
+</kw>
+<kw name="fill the login form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-28T09:19:42.805740" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<arg>${user}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T09:19:42.804363" elapsed="0.463612"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-28T09:19:43.269073" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-28T09:19:43.375961" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${pass}</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T09:19:43.268478" elapsed="0.239214"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-28T09:19:43.508540" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<arg>${login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T09:19:43.508059" elapsed="0.190376"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-28T09:19:48.700156" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-28T09:19:43.699144" elapsed="5.001286"/>
+</kw>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<status status="PASS" start="2025-05-28T09:19:42.803724" elapsed="5.896969"/>
+</kw>
+<kw name="close the broswer session" owner="GenericResources">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-28T09:19:48.701565" elapsed="2.293928"/>
+</kw>
+<status status="PASS" start="2025-05-28T09:19:48.701112" elapsed="2.294624"/>
+</kw>
+<arg>Username=smart@gmail.com</arg>
+<arg>Password=1234</arg>
+<status status="PASS" start="2025-05-28T09:19:38.205646" elapsed="12.790215"/>
+</kw>
+<status status="PASS" start="2025-05-28T09:19:38.203950" elapsed="12.792410"/>
+</test>
+<status status="PASS" start="2025-05-28T09:19:34.218319" elapsed="16.779507"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="LoginTest" id="s1" pass="1" fail="0" skip="0">LoginTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
