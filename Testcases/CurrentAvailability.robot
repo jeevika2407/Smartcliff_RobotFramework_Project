@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 *** Settings ***
 Documentation    Current Availability Test Cases for Smartcliff Admin Website
 Library    SeleniumLibrary
@@ -9,7 +7,7 @@ Resource   ../Resources/LoginResources.robot
 Resource   ../Resources/CurrentAvaliablityResources.robot
 Test setup    Open the browser with url
 Test Template    Fill Current Availability Form With Excel Data
-Test Teardown    Close the broswer session
+Test Teardown    close the broswer session
 
 
 *** Test Cases ***
@@ -49,4 +47,3 @@ Fill Current Availability Form With Excel Data
     
 
 
->>>>>>> 0645eba (CheckAvailablity Process Upto 3:47 28MAY2025)

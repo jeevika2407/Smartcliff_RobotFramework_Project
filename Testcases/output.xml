@@ -1,148 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on darwin)" generated="2025-05-28T15:45:09.416199" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on darwin)" generated="2025-05-28T15:53:53.710325" rpa="false" schemaversion="5">
 <suite id="s1" name="CurrentAvailability" source="/Users/sevvelkaranpalanivetrivel/Desktop/RobotPILOT/Smartcliff_RobotFramework_Project/Testcases/CurrentAvailability.robot">
 <test id="s1-t1" name="Verify the Current Availability Page" line="14">
 <kw name="Open the browser with url" owner="GenericResources" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T15:53:56.220477" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x11f778830&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-28T15:53:56.220055" elapsed="0.000485"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T15:53:56.220754" elapsed="0.000217"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T15:53:56.221131" elapsed="0.000182"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T15:53:56.221459" elapsed="0.000186"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T15:53:56.221791" elapsed="0.000174"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T15:53:56.222108" elapsed="0.000178"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T15:53:56.222685" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-28T15:53:56.222435" elapsed="0.000299"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T15:53:56.222877" elapsed="0.000206"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:11.622004" level="INFO">Opening browser 'Firefox' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<msg time="2025-05-28T15:53:56.224332" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
+<arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-28T15:45:11.621676" elapsed="6.810166"/>
+<status status="PASS" start="2025-05-28T15:53:56.223277" elapsed="3.304096"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-28T15:45:18.432938" elapsed="0.537077"/>
+<status status="PASS" start="2025-05-28T15:53:59.528282" elapsed="0.116473"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-28T15:45:18.970288" elapsed="0.002623"/>
+<status status="PASS" start="2025-05-28T15:53:59.645095" elapsed="0.006714"/>
 </kw>
-<status status="PASS" start="2025-05-28T15:45:11.620665" elapsed="7.352504"/>
+<status status="PASS" start="2025-05-28T15:53:56.219072" elapsed="3.433042"/>
 </kw>
 <kw name="Fill Current Availability Form With Excel Data">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-28T15:45:18.974907" level="INFO">${username} = smart@gmail.com</msg>
+<msg time="2025-05-28T15:53:59.656413" level="INFO">${username} = smart@gmail.com</msg>
 <var>${username}</var>
 <arg>smart@gmail.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-28T15:45:18.974639" elapsed="0.000346"/>
+<status status="PASS" start="2025-05-28T15:53:59.655123" elapsed="0.001584"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-28T15:45:18.975367" level="INFO">${password} = 1234</msg>
+<msg time="2025-05-28T15:53:59.657628" level="INFO">${password} = 1234</msg>
 <var>${password}</var>
 <arg>1234</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-28T15:45:18.975166" elapsed="0.000247"/>
+<status status="PASS" start="2025-05-28T15:53:59.657111" elapsed="0.000604"/>
 </kw>
 <kw name="fill the login form" owner="LoginResources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:18.977488" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<msg time="2025-05-28T15:53:59.662617" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
 <arg>${user}</arg>
 <arg>${Username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:18.976160" elapsed="0.224146"/>
+<status status="PASS" start="2025-05-28T15:53:59.660474" elapsed="1.139830"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:19.200879" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
-<msg time="2025-05-28T15:45:19.211493" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-05-28T15:54:00.801286" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-28T15:54:01.180380" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${pass}</arg>
 <arg>${Password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:19.200543" elapsed="0.090759"/>
+<status status="PASS" start="2025-05-28T15:54:00.800710" elapsed="0.523958"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:19.292056" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<msg time="2025-05-28T15:54:01.325292" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
 <arg>${login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:19.291651" elapsed="0.282369"/>
+<status status="PASS" start="2025-05-28T15:54:01.324999" elapsed="0.250502"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-28T15:45:24.575925" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-05-28T15:54:06.578174" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-28T15:45:19.574600" elapsed="5.001579"/>
+<status status="PASS" start="2025-05-28T15:54:01.576234" elapsed="5.002189"/>
 </kw>
 <arg>${username}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-28T15:45:18.975694" elapsed="5.600750"/>
+<status status="PASS" start="2025-05-28T15:53:59.658930" elapsed="6.919757"/>
 </kw>
 <kw name="Click on the Menu button and choose Current Availability by Clicking on the Bussiness" owner="CurrentAvaliablityResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:24.578230" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
+<msg time="2025-05-28T15:54:06.580848" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
 <arg>${menu_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:24.577729" elapsed="0.242068"/>
+<status status="PASS" start="2025-05-28T15:54:06.580293" elapsed="0.106151"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:24.820861" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
+<msg time="2025-05-28T15:54:06.687231" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
 <arg>${bussiness}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:24.820258" elapsed="0.262497"/>
+<status status="PASS" start="2025-05-28T15:54:06.686793" elapsed="0.216353"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:25.083543" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Current Availability']'.</msg>
+<msg time="2025-05-28T15:54:06.903727" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Current Availability']'.</msg>
 <arg>${current_availability}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:25.083146" elapsed="0.339463"/>
+<status status="PASS" start="2025-05-28T15:54:06.903403" elapsed="0.219108"/>
 </kw>
-<status status="PASS" start="2025-05-28T15:45:24.576992" elapsed="0.845831"/>
+<status status="PASS" start="2025-05-28T15:54:06.579452" elapsed="0.551980"/>
 </kw>
 <kw name="Click on the Add New Current Availability button and Add Form Values" owner="CurrentAvaliablityResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:25.425100" level="INFO">Clicking element '//*[@id="root"]/div[1]/main/div[2]/div[1]/div[2]/button'.</msg>
+<msg time="2025-05-28T15:54:07.133073" level="INFO">Clicking element '//*[@id="root"]/div[1]/main/div[2]/div[1]/div[2]/button'.</msg>
 <arg>//*[@id="root"]/div[1]/main/div[2]/div[1]/div[2]/button</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:25.424811" elapsed="0.552694"/>
+<status status="PASS" start="2025-05-28T15:54:07.132775" elapsed="0.612239"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:25.978159" level="INFO">Typing text 'Automation ' into text field '//input[@name="skillset"]'.</msg>
+<msg time="2025-05-28T15:54:07.748109" level="INFO">Typing text 'Automation ' into text field '//input[@name="skillset"]'.</msg>
 <arg>//input[@name="skillset"]</arg>
 <arg>${skill}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:25.977793" elapsed="0.303565"/>
+<status status="PASS" start="2025-05-28T15:54:07.745753" elapsed="0.607578"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:26.281887" level="INFO">Typing text '5' into text field '//input[@name="resources"]'.</msg>
+<msg time="2025-05-28T15:54:08.360204" level="INFO">Typing text '5' into text field '//input[@name="resources"]'.</msg>
 <arg>//input[@name="resources"]</arg>
 <arg>${resources}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:26.281583" elapsed="0.052047"/>
+<status status="PASS" start="2025-05-28T15:54:08.359498" elapsed="0.166655"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:26.334204" level="INFO">Typing text '10' into text field '//input[@name="duration"]'.</msg>
+<msg time="2025-05-28T15:54:08.526896" level="INFO">Typing text '10' into text field '//input[@name="duration"]'.</msg>
 <arg>//input[@name="duration"]</arg>
 <arg>${duration}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:26.333880" elapsed="0.113748"/>
+<status status="PASS" start="2025-05-28T15:54:08.526486" elapsed="0.169944"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:26.448446" level="INFO">Typing text 'A1' into text field '//input[@name="batch"]'.</msg>
+<msg time="2025-05-28T15:54:08.697217" level="INFO">Typing text 'A1' into text field '//input[@name="batch"]'.</msg>
 <arg>//input[@name="batch"]</arg>
 <arg>${batch}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:26.447970" elapsed="0.082262"/>
+<status status="PASS" start="2025-05-28T15:54:08.696824" elapsed="0.185067"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:26.530733" level="INFO">Typing text '0' into text field '//input[@name="experience"]'.</msg>
+<msg time="2025-05-28T15:54:08.882479" level="INFO">Typing text '0' into text field '//input[@name="experience"]'.</msg>
 <arg>//input[@name="experience"]</arg>
 <arg>${exp}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:26.530455" elapsed="0.047070"/>
+<status status="PASS" start="2025-05-28T15:54:08.882166" elapsed="0.150655"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:26.578029" level="INFO">Typing text 'Will help in in improving the skills' into text field '//textarea[@name="remarks"]'.</msg>
+<msg time="2025-05-28T15:54:09.033740" level="INFO">Typing text 'Will help in in improving the skills' into text field '//textarea[@name="remarks"]'.</msg>
 <arg>//textarea[@name="remarks"]</arg>
 <arg>${remarks}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:26.577759" elapsed="0.702591"/>
+<status status="PASS" start="2025-05-28T15:54:09.033214" elapsed="0.845815"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-28T15:45:27.281304" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<msg time="2025-05-28T15:54:09.879836" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
 <arg>${submit_btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T15:45:27.280830" elapsed="0.243790"/>
+<status status="PASS" start="2025-05-28T15:54:09.879331" elapsed="0.171735"/>
 </kw>
 <arg>${skill}</arg>
 <arg>${resources}</arg>
@@ -150,7 +209,7 @@
 <arg>${batch}</arg>
 <arg>${exp}</arg>
 <arg>${remarks}</arg>
-<status status="PASS" start="2025-05-28T15:45:25.423425" elapsed="2.101512"/>
+<status status="PASS" start="2025-05-28T15:54:07.131837" elapsed="2.919555"/>
 </kw>
 <arg>skill=Automation </arg>
 <arg>resources=5</arg>
@@ -158,30 +217,32 @@
 <arg>batch=A1</arg>
 <arg>exp=0</arg>
 <arg>remarks=Will help in in improving the skills</arg>
-<status status="PASS" start="2025-05-28T15:45:18.973853" elapsed="8.551370"/>
+<status status="PASS" start="2025-05-28T15:53:59.652895" elapsed="10.398808"/>
 </kw>
-<kw name="close the broswer session" owner="GenericResources" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-28T15:45:27.527530" elapsed="1.086662"/>
+<kw name="close the broswer session" type="TEARDOWN">
+<msg time="2025-05-28T15:54:10.054138" level="FAIL">No keyword with name 'close the broswer session' found. Did you mean:
+    GenericResources.close the browser session</msg>
+<status status="FAIL" start="2025-05-28T15:54:10.054043" elapsed="0.000188">No keyword with name 'close the broswer session' found. Did you mean:
+    GenericResources.close the browser session</status>
 </kw>
-<status status="PASS" start="2025-05-28T15:45:27.526366" elapsed="1.088063"/>
-</kw>
-<status status="PASS" start="2025-05-28T15:45:11.618864" elapsed="16.995815"/>
+<status status="FAIL" start="2025-05-28T15:53:56.217117" elapsed="13.837318">Teardown failed:
+No keyword with name 'close the broswer session' found. Did you mean:
+    GenericResources.close the browser session</status>
 </test>
 <doc>Current Availability Test Cases for Smartcliff Admin Website</doc>
-<status status="PASS" start="2025-05-28T15:45:09.419169" elapsed="19.197076"/>
+<status status="FAIL" start="2025-05-28T15:53:53.713040" elapsed="16.342194"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="CurrentAvailability" id="s1" pass="1" fail="0" skip="0">CurrentAvailability</stat>
+<stat name="CurrentAvailability" id="s1" pass="0" fail="1" skip="0">CurrentAvailability</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-05-28T15:53:54.524648" level="ERROR">Error in file '/Users/sevvelkaranpalanivetrivel/Desktop/RobotPILOT/Smartcliff_RobotFramework_Project/Resources/CurrentAvaliablityResources.robot' on line 11: Setting variable '&gt;&gt;&gt;&gt;&gt;&gt;&gt; 9aae2b5 (Current Availability on 28MAY2025)' failed: Invalid variable name '&gt;&gt;&gt;&gt;&gt;&gt;&gt; 9aae2b5 (Current Availability on 28MAY2025)'.</msg>
 </errors>
 </robot>

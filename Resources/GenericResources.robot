@@ -2,13 +2,13 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-<<<<<<< HEAD
+
 ${url}    https://smart-cliff-admin.vercel.app/
 ${browser}    chrome
-=======
+
 ${url}       https://smart-cliff-admin.vercel.app/
 ${browser}   chrome
->>>>>>> a072ff6 (login valid,invalid inputs)
+
 
 *** Keywords ***
 Open the browser with url
