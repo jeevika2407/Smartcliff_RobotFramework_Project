@@ -3,8 +3,13 @@ Library    SeleniumLibrary
 Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Resource    ../Resources/ClientResources.robot
+Library    DataDriver    file=../Utility/Filterdata.csv    encoding=utf_8    dialect=unix
+
+* Variables *
+${Filtertype}
 
 *** Test Cases ***
+
 Access Client Page
     [Tags]    smoke
     Verify that the "Client" page loads successfully
@@ -14,10 +19,12 @@ Add New Client
 Access Clear functionality
     [Tags]    clear
     Validate 'Clear Filters' Functionality
-# Search Client by Name
-#     Verify the search functionality.
-# Filter by Type
-#     Verify that clients can be filtered by type.
+Search Client by Name
+    Verify the search functionality.
+Filter by Type
+     [Tags]    filter
+     [Template]    Verify that clients can be filtered by type.
+     ${Filtertype}
 # Edit Client Details
 #     Verify that client details can be updated.
 # Delete Client
@@ -56,7 +63,24 @@ Validate 'Clear Filters' Functionality
     Click the 'Clear' button
     verify that the filter is removed correctly.
 
-
-     
+Verify the search functionality.
+    Open the browser with url
+    fill the login form    smart@gmail.com    1234
+    Click the menu button to open the sidebar.
+    Click the Business option in the menu.
+    Click the Client option under Business.
+    Enter a name in the input field.
+    The entered name should be displayed in the filter section below.
+    
+Verify that clients can be filtered by type.
+    [Arguments]    ${Filtertype}
+    Open the browser with url
+    fill the login form    smart@gmail.com    1234
+    Click the menu button to open the sidebar.
+    Click the Business option in the menu.
+    Click the Client option under Business.
+    The user selects a specific type.    
+    Verify that the corresponding items are displayed below.    ${Filtertype}
+    
     
 
