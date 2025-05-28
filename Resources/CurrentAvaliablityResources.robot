@@ -48,7 +48,7 @@ Click on the Add New Current Availability button and Add Form Values
     Input Text       //textarea[@name="remarks"]     ${remarks}
     Click Button     ${submit_btn}
     Page Should Contain Element    //td[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg"][1]    
-    
+
 
     
 

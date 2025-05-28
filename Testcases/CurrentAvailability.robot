@@ -41,7 +41,7 @@ Fill Current Availability Form With Excel Data Provided
     LoginResources.fill the login form   ${username}    ${password}
     CurrentAvaliablityResources.Click on the Menu button and choose Current Availability by Clicking on the Bussiness 
     CurrentAvaliablityResources.Click on the Add New Current Availability button and Add Form Values    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}
-
+.
     
 
 
