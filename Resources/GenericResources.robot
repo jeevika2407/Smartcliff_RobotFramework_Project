@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 *** Variables ***
 <<<<<<< HEAD
 ${url}    https://smart-cliff-admin.vercel.app/
-${browser}    Firefox
+${browser}    chrome
 =======
 ${url}       https://smart-cliff-admin.vercel.app/
 ${browser}   chrome
