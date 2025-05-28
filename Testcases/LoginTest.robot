@@ -10,11 +10,24 @@ ${Username}
 ${Password}
 
 *** Test Cases ***
-Valid Login Test    ${Username}    ${Password}
+Validate Login Test    ${Username}    ${Password}
 
 *** Keywords ***
 validate login
     [Arguments]    ${Username}    ${Password}    
     Open the browser with url
     fill the login form    ${Username}    ${Password}
-    close the broswer session
+
+    IF    '${Username}' == '' and '${Password}' == ''
+        Page Should Contain Element    ${erroremail}
+        Page Should Contain Element    ${errorpwd}
+    ELSE IF    '${Username}' == ''
+        Page Should Contain Element    ${erroremail}
+    ELSE IF    '${Password}' == ''
+        Page Should Contain Element    ${errorpwd}
+    ELSE
+        Location Should Be    https://smart-cliff-admin.vercel.app/adminHome
+    END
+
+    Close Browser
+
