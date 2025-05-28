@@ -1,84 +1,674 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-28T09:19:34.215956" rpa="false" schemaversion="5">
-<suite id="s1" name="LoginTest" source="D:\SmartCliff_RobotFramework_Project\Testcases\LoginTest.robot">
-<test id="s1-t1" name="Valid Login Test" line="13">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-28T12:29:06.755962" rpa="false" schemaversion="5">
+<suite id="s1" name="LoginTest" source="D:\smartcliff_project\Smartcliff_RobotFramework_Project\Testcases\LoginTest.robot">
+<test id="s1-t1" name="Validate Login Test" line="13">
 <kw name="validate login">
 <kw name="Open the browser with url" owner="GenericResources">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T12:29:08.869207" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000192B0C6C440&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-28T12:29:08.868612" elapsed="0.000672"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:08.869541" elapsed="0.000276"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:08.869995" elapsed="0.000177"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:08.870266" elapsed="0.000110"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:08.870458" elapsed="0.000105"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:08.870642" elapsed="0.000085"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T12:29:08.871032" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-28T12:29:08.870831" elapsed="0.000231"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:08.871136" elapsed="0.000113"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-28T09:19:38.207442" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<msg time="2025-05-28T12:29:08.871600" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
+<arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-28T09:19:38.207209" elapsed="4.516826"/>
+<status status="PASS" start="2025-05-28T12:29:08.871359" elapsed="5.827978"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-28T09:19:42.724550" elapsed="0.074164"/>
+<status status="PASS" start="2025-05-28T12:29:14.699590" elapsed="0.006358"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-28T09:19:42.799117" elapsed="0.003682"/>
+<status status="PASS" start="2025-05-28T12:29:14.706172" elapsed="0.001645"/>
 </kw>
-<status status="PASS" start="2025-05-28T09:19:38.206388" elapsed="4.596951"/>
+<status status="PASS" start="2025-05-28T12:29:08.868075" elapsed="5.839954"/>
 </kw>
 <kw name="fill the login form" owner="LoginResources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T09:19:42.805740" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<msg time="2025-05-28T12:29:14.709392" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
 <arg>${user}</arg>
 <arg>${Username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T09:19:42.804363" elapsed="0.463612"/>
+<status status="PASS" start="2025-05-28T12:29:14.708841" elapsed="0.253567"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-28T09:19:43.269073" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
-<msg time="2025-05-28T09:19:43.375961" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-05-28T12:29:14.963209" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-28T12:29:15.080402" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${pass}</arg>
 <arg>${Password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T09:19:43.268478" elapsed="0.239214"/>
+<status status="PASS" start="2025-05-28T12:29:14.962757" elapsed="0.251782"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-28T09:19:43.508540" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<msg time="2025-05-28T12:29:15.215082" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
 <arg>${login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T09:19:43.508059" elapsed="0.190376"/>
+<status status="PASS" start="2025-05-28T12:29:15.214801" elapsed="0.183971"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-28T09:19:48.700156" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-05-28T12:29:20.399992" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-28T09:19:43.699144" elapsed="5.001286"/>
+<status status="PASS" start="2025-05-28T12:29:15.399053" elapsed="5.001232"/>
 </kw>
 <arg>${Username}</arg>
 <arg>${Password}</arg>
-<status status="PASS" start="2025-05-28T09:19:42.803724" elapsed="5.896969"/>
+<status status="PASS" start="2025-05-28T12:29:14.708258" elapsed="5.692292"/>
 </kw>
-<kw name="close the broswer session" owner="GenericResources">
+<if>
+<branch type="IF" condition="'${Username}' == '' and '${Password}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${erroremail}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:20.401370" elapsed="0.000059"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${errorpwd}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:20.401607" elapsed="0.000047"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:20.400829" elapsed="0.000892"/>
+</branch>
+<branch type="ELSE IF" condition="'${Username}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${erroremail}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:20.402079" elapsed="0.000047"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:20.401808" elapsed="0.000386"/>
+</branch>
+<branch type="ELSE IF" condition="'${Password}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${errorpwd}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:20.402502" elapsed="0.000045"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:20.402261" elapsed="0.000352"/>
+</branch>
+<branch type="ELSE">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:20.410747" level="INFO">Current location is 'https://smart-cliff-admin.vercel.app/adminHome'.</msg>
+<arg>https://smart-cliff-admin.vercel.app/adminHome</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-28T12:29:20.402810" elapsed="0.008108"/>
+</kw>
+<status status="PASS" start="2025-05-28T12:29:20.402668" elapsed="0.008375"/>
+</branch>
+<status status="PASS" start="2025-05-28T12:29:20.400711" elapsed="0.010411"/>
+</if>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-28T09:19:48.701565" elapsed="2.293928"/>
-</kw>
-<status status="PASS" start="2025-05-28T09:19:48.701112" elapsed="2.294624"/>
+<status status="PASS" start="2025-05-28T12:29:20.411375" elapsed="2.240554"/>
 </kw>
 <arg>Username=smart@gmail.com</arg>
 <arg>Password=1234</arg>
-<status status="PASS" start="2025-05-28T09:19:38.205646" elapsed="12.790215"/>
+<status status="PASS" start="2025-05-28T12:29:08.867686" elapsed="13.784807"/>
 </kw>
-<status status="PASS" start="2025-05-28T09:19:38.203950" elapsed="12.792410"/>
+<status status="PASS" start="2025-05-28T12:29:08.865323" elapsed="13.787901"/>
 </test>
-<status status="PASS" start="2025-05-28T09:19:34.218319" elapsed="16.779507"/>
+<test id="s1-t2" name="Validate Login Test" line="13">
+<kw name="validate login">
+<kw name="Open the browser with url" owner="GenericResources">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T12:29:22.657891" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000192B0C78A50&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-28T12:29:22.657456" elapsed="0.000494"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:22.658132" elapsed="0.000204"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:22.658496" elapsed="0.000187"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:22.658836" elapsed="0.000238"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:22.659229" elapsed="0.000182"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:22.659563" elapsed="0.000179"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T12:29:22.660190" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-28T12:29:22.659902" elapsed="0.000337"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:22.660392" elapsed="0.000222"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:22.661210" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-28T12:29:22.660814" elapsed="4.042976"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-28T12:29:26.704300" elapsed="0.018111"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-28T12:29:26.722854" elapsed="0.001823"/>
+</kw>
+<status status="PASS" start="2025-05-28T12:29:22.657108" elapsed="4.067804"/>
+</kw>
+<kw name="fill the login form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:26.726429" level="INFO">Typing text '' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<arg>${user}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T12:29:26.725950" elapsed="0.224117"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:26.951434" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-28T12:29:27.123370" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${pass}</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T12:29:26.950390" elapsed="0.262207"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:27.213689" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<arg>${login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T12:29:27.213113" elapsed="0.214395"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-28T12:29:32.428869" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-28T12:29:27.427841" elapsed="5.001319"/>
+</kw>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<status status="PASS" start="2025-05-28T12:29:26.725235" elapsed="5.704187"/>
+</kw>
+<if>
+<branch type="IF" condition="'${Username}' == '' and '${Password}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:32.442429" level="INFO">Current page contains element 'xpath=//div/descendant::p[contains(text(),"Email is required")]'.</msg>
+<arg>${erroremail}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-28T12:29:32.430286" elapsed="0.012256"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:32.454163" level="INFO">Current page contains element 'xpath=//div/descendant::p[contains(text(),"Password is required")]'.</msg>
+<arg>${errorpwd}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-28T12:29:32.442740" elapsed="0.011630"/>
+</kw>
+<status status="PASS" start="2025-05-28T12:29:32.429759" elapsed="0.024743"/>
+</branch>
+<branch type="ELSE IF" condition="'${Username}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${erroremail}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:32.454840" elapsed="0.000105"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:32.454587" elapsed="0.000445"/>
+</branch>
+<branch type="ELSE IF" condition="'${Password}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${errorpwd}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:32.455250" elapsed="0.000048"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:32.455095" elapsed="0.000273"/>
+</branch>
+<branch type="ELSE">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<arg>https://smart-cliff-admin.vercel.app/adminHome</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:32.455574" elapsed="0.000046"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:32.455426" elapsed="0.000267"/>
+</branch>
+<status status="PASS" start="2025-05-28T12:29:32.429646" elapsed="0.026270"/>
+</if>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-28T12:29:32.456079" elapsed="2.195611"/>
+</kw>
+<arg>Username=</arg>
+<arg>Password=</arg>
+<status status="PASS" start="2025-05-28T12:29:22.656527" elapsed="11.995487"/>
+</kw>
+<status status="PASS" start="2025-05-28T12:29:22.654250" elapsed="11.998389"/>
+</test>
+<test id="s1-t3" name="Validate Login Test" line="13">
+<kw name="validate login">
+<kw name="Open the browser with url" owner="GenericResources">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T12:29:34.657054" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000192B0B96FD0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-28T12:29:34.656639" elapsed="0.000475"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:34.657298" elapsed="0.000204"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:34.657664" elapsed="0.000202"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:34.658024" elapsed="0.000184"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:34.658361" elapsed="0.000181"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:34.658696" elapsed="0.000179"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T12:29:34.659300" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-28T12:29:34.659037" elapsed="0.000311"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:34.659500" elapsed="0.000220"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:34.660308" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-28T12:29:34.659949" elapsed="3.849319"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-28T12:29:38.509701" elapsed="0.019667"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-28T12:29:38.529960" elapsed="0.006043"/>
+</kw>
+<status status="PASS" start="2025-05-28T12:29:34.656281" elapsed="3.880213"/>
+</kw>
+<kw name="fill the login form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:38.540193" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<arg>${user}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T12:29:38.539389" elapsed="0.458991"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:38.999412" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-28T12:29:39.043842" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${pass}</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T12:29:38.998713" elapsed="0.116096"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:39.115555" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<arg>${login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T12:29:39.115124" elapsed="0.203546"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-28T12:29:44.319881" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-28T12:29:39.318982" elapsed="5.001236"/>
+</kw>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<status status="PASS" start="2025-05-28T12:29:38.537181" elapsed="5.783299"/>
+</kw>
+<if>
+<branch type="IF" condition="'${Username}' == '' and '${Password}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${erroremail}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:44.321335" elapsed="0.000062"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${errorpwd}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:44.321571" elapsed="0.000046"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:44.320739" elapsed="0.000946"/>
+</branch>
+<branch type="ELSE IF" condition="'${Username}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${erroremail}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:44.322014" elapsed="0.000044"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:44.321759" elapsed="0.000364"/>
+</branch>
+<branch type="ELSE IF" condition="'${Password}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:44.338057" level="INFO">Current page contains element 'xpath=//div/descendant::p[contains(text(),"Password is required")]'.</msg>
+<arg>${errorpwd}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-28T12:29:44.322446" elapsed="0.015780"/>
+</kw>
+<status status="PASS" start="2025-05-28T12:29:44.322178" elapsed="0.016173"/>
+</branch>
+<branch type="ELSE">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<arg>https://smart-cliff-admin.vercel.app/adminHome</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:44.338655" elapsed="0.000054"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:44.338425" elapsed="0.000353"/>
+</branch>
+<status status="PASS" start="2025-05-28T12:29:44.320667" elapsed="0.018259"/>
+</if>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-28T12:29:44.339073" elapsed="2.223637"/>
+</kw>
+<arg>Username=smart@gmail.com</arg>
+<arg>Password=</arg>
+<status status="PASS" start="2025-05-28T12:29:34.655611" elapsed="11.907333"/>
+</kw>
+<status status="PASS" start="2025-05-28T12:29:34.653489" elapsed="11.910064"/>
+</test>
+<test id="s1-t4" name="Validate Login Test" line="13">
+<kw name="validate login">
+<kw name="Open the browser with url" owner="GenericResources">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T12:29:46.569120" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000192B0BAFCE0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-28T12:29:46.568621" elapsed="0.000567"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:46.569412" elapsed="0.000237"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:46.569818" elapsed="0.000210"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:46.570253" elapsed="0.000215"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:46.570638" elapsed="0.000197"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:46.570999" elapsed="0.000193"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T12:29:46.571654" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-28T12:29:46.571363" elapsed="0.000344"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-28T12:29:46.571866" elapsed="0.000232"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:46.572701" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-28T12:29:46.572318" elapsed="3.462090"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-28T12:29:50.034618" elapsed="0.002930"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-28T12:29:50.037743" elapsed="0.001688"/>
+</kw>
+<status status="PASS" start="2025-05-28T12:29:46.568224" elapsed="3.471469"/>
+</kw>
+<kw name="fill the login form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:50.041291" level="INFO">Typing text '' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<arg>${user}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T12:29:50.040636" elapsed="0.103756"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:50.145107" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-28T12:29:50.319179" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${pass}</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T12:29:50.144699" elapsed="0.308045"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:50.453698" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<arg>${login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T12:29:50.453242" elapsed="0.169576"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-28T12:29:55.623992" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-28T12:29:50.623067" elapsed="5.001296"/>
+</kw>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<status status="PASS" start="2025-05-28T12:29:50.039954" elapsed="5.584734"/>
+</kw>
+<if>
+<branch type="IF" condition="'${Username}' == '' and '${Password}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${erroremail}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:55.625370" elapsed="0.000036"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${errorpwd}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:55.625497" elapsed="0.000024"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:55.624890" elapsed="0.000669"/>
+</branch>
+<branch type="ELSE IF" condition="'${Username}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-28T12:29:55.639114" level="INFO">Current page contains element 'xpath=//div/descendant::p[contains(text(),"Email is required")]'.</msg>
+<arg>${erroremail}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-28T12:29:55.625763" elapsed="0.013507"/>
+</kw>
+<status status="PASS" start="2025-05-28T12:29:55.625605" elapsed="0.013783"/>
+</branch>
+<branch type="ELSE IF" condition="'${Password}' == ''">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${errorpwd}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:55.639699" elapsed="0.000052"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:55.639465" elapsed="0.000355"/>
+</branch>
+<branch type="ELSE">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<arg>https://smart-cliff-admin.vercel.app/adminHome</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="NOT RUN" start="2025-05-28T12:29:55.640026" elapsed="0.000045"/>
+</kw>
+<status status="NOT RUN" start="2025-05-28T12:29:55.639877" elapsed="0.000259"/>
+</branch>
+<status status="PASS" start="2025-05-28T12:29:55.624831" elapsed="0.015548"/>
+</if>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-28T12:29:55.640528" elapsed="2.213301"/>
+</kw>
+<arg>Username=</arg>
+<arg>Password=1234</arg>
+<status status="PASS" start="2025-05-28T12:29:46.567555" elapsed="11.286535"/>
+</kw>
+<status status="PASS" start="2025-05-28T12:29:46.564632" elapsed="11.290090"/>
+</test>
+<status status="PASS" start="2025-05-28T12:29:06.757902" elapsed="51.098511"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="LoginTest" id="s1" pass="1" fail="0" skip="0">LoginTest</stat>
+<stat name="LoginTest" id="s1" pass="4" fail="0" skip="0">LoginTest</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-05-28T12:29:22.654472" level="WARN">Multiple tests with name 'Validate Login Test' executed in suite 'LoginTest'.</msg>
+<msg time="2025-05-28T12:29:34.653571" level="WARN">Multiple tests with name 'Validate Login Test' executed in suite 'LoginTest'.</msg>
+<msg time="2025-05-28T12:29:46.564727" level="WARN">Multiple tests with name 'Validate Login Test' executed in suite 'LoginTest'.</msg>
 </errors>
 </robot>
