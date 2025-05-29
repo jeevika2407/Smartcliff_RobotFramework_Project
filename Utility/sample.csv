@@ -1,2 +1,4 @@
-*TestCases*,${Heading},${Description_name}
-Type one,good this is a title,this is a description
+${Heading},${Description_name}
+NA,This is a description
+Good this is a title,NA
+NA,NA
