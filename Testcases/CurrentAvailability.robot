@@ -16,12 +16,8 @@ Current Availability Entry Test
     [Tags]    current_availability      regression
     Validate Current Availability Data Entry
 
-# Performing Delete Action in Current Availability
-#     [Template]    NONE
-#     Assert wheather the page is in CURRENT AVAILABILITY CONTROL PAGE
-#     Click on the Delete Button and Assert the Fullstack is not present
-
 *** Keywords ***
+
 Validate Current Availability Data Entry
     [Arguments]    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}    ${type}
     ${username}=    Set Variable    smart@gmail.com
@@ -31,9 +27,6 @@ Validate Current Availability Data Entry
     CurrentAvaliablityResources.Click on the Add New Current Availability button and Add Form Values    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}
     sleep    2s
     Run Keyword If    '${type}' == 'invalid'    Assert Form Error Messages Are Displayed
-    
-
-
     
 
 
