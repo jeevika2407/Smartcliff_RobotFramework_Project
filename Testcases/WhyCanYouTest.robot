@@ -19,9 +19,8 @@ Verify it reached form filling page
     Form filling page verify
 Add New WCY Hire After Successful Login
     Add New Hire Form
-
-# Search Title By Name
-#     Verify The Search Functionality
+Search Title By Name
+    Verify The Search Functionality
 
 *** Keywords ***
 Home Page Verify
@@ -54,5 +53,20 @@ Add New Hire Form
     Click On The Add Definition
     Fill The Add Definition Form
     Click On Create
-    Wait Until Page Contains Element    ${actual-name-list}    timeout=10s
     Check If Name Exists In Filtered List    ${expected_name}
+
+Verify The Search Functionality
+    Open The Browser With URL
+    Fill The Login Form    ${email}    ${pwd}
+    Click The Menu Bar
+    Click Option Under Menu Bar
+    Add A New Hire
+    Fill The New Hire Form
+    Click On The Add Definition
+    Fill The Add Definition Form
+    Click On Create
+    Enter a name in the input field.
+    The entered name should be displayed in the filter section below.
+
+
+
