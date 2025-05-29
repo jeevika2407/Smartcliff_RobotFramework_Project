@@ -3,8 +3,6 @@ Library    SeleniumLibrary
 Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Resource   ../Resources/HowItWorkResources.robot
-Library    DataDriver    file=../Utility/sample.csv    encoding=utf_8    dialect=unix
-
 
 *** Variables ***
 ${Username}    smart@gmail.com
@@ -19,7 +17,7 @@ Clicking Icon on How It Work Page
     Working with How It Work Page By clicking icon        
 Add New How It Work with Valid Data
     [Tags]    negative    howitworkform
-    Add New How It Work with Invalid Data      
+    Add New How It Work with Valid Data      
 Search How It Work with Valid Data
     [Tags]    regression    howitworksearchpositive
     Search How It Work with Valid Data         

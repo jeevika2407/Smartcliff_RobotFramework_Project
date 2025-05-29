@@ -96,6 +96,7 @@ delete How It Work
 Edit How It Work
     [Arguments]    ${Titless}
     Click Element    ${Edit_button}
+    Wait Until Element Is Visible    ${Title-path}    timeout=10s
     Press Keys    ${Title-path}    CTRL+A    DELETE
     sleep    2
     Input Text    ${title1}    ${Titless}
