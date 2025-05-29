@@ -15,11 +15,15 @@ ${searchbox_lj}    //input[@placeholder="Search Learning Journeys..."]
 ${add_btn}    (//button[@type='button'])[4]
 ${type}    //div[@role="combobox"]
 ${hire}    //ul[@class="MuiList-root MuiList-padding MuiMenu-list css-r8u8y9"]/li[1]
+${train}    //ul[@class="MuiList-root MuiList-padding MuiMenu-list css-r8u8y9"]/li[2]
 ${title_add}    //input[@class="MuiInputBase-input MuiOutlinedInput-input"]
 ${text_area}    //label[text()='Description']/following::textarea
 ${img_area}    //div[@class="MuiDropzoneArea-textContainer"]
 ${submit_btn}    //button[@type="submit"]
 ${initial_url}    https://smart-cliff-admin.vercel.app/business/learningjourney-control
+${edit}    (//table//tr[1]//td[4]//div//button)[1]
+${delete}    (//table//tr[1]//td[4]//div//button)[2]
+${delete2}    //div[@class="MuiDialogActions-root MuiDialogActions-spacing css-1vskg8q"]/button[2]
 
 
 *** Keywords ***
@@ -60,9 +64,32 @@ Assert Error Messages Are Displayed
     ${current_url}=    Get Location
     Should Not Be Equal    ${initial_url}    ${current_url}
 
+Asserting the hirefromus in the Tablular Display
+    Page Should Contain Element    //td[text()='hirefromus']
+    
+Edititng the hirefromus into trainfromus
+    
+    Click Element    ${edit}
+    Click Element    ${type}
+    Click Element    ${train}
+
+    Click Element    ${submit_btn}
+
+Assert the trainfromus in the Tablular Display
+
+    Page Should Contain Element    //td[text()='trainfromus']
 
         
 
+Deleting an element from the Learning Journey Table
 
-
+    @{rows}=    Get WebElements    xpath=//tbody[@class="MuiTableBody-root css-1xnox0e"]/tr/td[1]
+    ${row_count}=    Get Length    ${rows}
+    Log    Total number of rows in table: ${row_count}
+    Click Element    ${delete}
+    Click Element    ${delete2}
+    sleep    5s
+    @{titles}=    Get WebElements    xpath=//tbody[@class="MuiTableBody-root css-1xnox0e"]/tr/td[1]
+    ${title_count}=    Get Length    ${titles}
+    Run Keyword If    ${title_count} >= ${row_count}    Fail    Title count (${title_count}) exceeds row count (${row_count})
 

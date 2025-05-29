@@ -19,7 +19,7 @@ Clicking Icon on How It Work Page
     Working with How It Work Page By clicking icon        
 Add New How It Work with Valid Data
     [Tags]    negative    howitworkform
-    Add New How It Work with Invalid Data      
+    Add New How It Work with Valid Data      
 Search How It Work with Valid Data
     [Tags]    regression    howitworksearchpositive
     Search How It Work with Valid Data         
