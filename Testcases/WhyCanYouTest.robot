@@ -11,10 +11,12 @@ ${pwd}      1234
 ${expected_name}    txt
 
 *** Test Cases ***
-Verify It Reached Home Page
+Verify It Reached Home Page 
     Home Page Verify
-Verify It Reached "Why Can You" Page
-    Why Can You Page Verify
+Verify It Reached "Why Can You" Page by clicking on menu bar
+    click menu bar and verify it reached Why Can You Page
+Verify It Reached "Why Can You" Page by clicking on icon
+    click icon and verify why can you page
 Verify it reached form filling page
     Form filling page verify
 Add New WCY Hire After Successful Login
@@ -28,11 +30,18 @@ Home Page Verify
     Fill The Login Form    ${email}    ${pwd}
     Location Should Be    https://smart-cliff-admin.vercel.app/adminHome
 
-Why Can You Page Verify
+click menu bar and verify it reached Why Can You Page
     Open The Browser With URL
     Fill The Login Form    ${email}    ${pwd}
     Click The Menu Bar
     Click Option Under Menu Bar
+    Location Should Be    https://smart-cliff-admin.vercel.app/business/wcy-hire-control
+
+click icon and verify why can you page
+    Open The Browser With URL
+    Fill The Login Form    ${email}    ${pwd}
+    Click The Menu Bar
+    Click icon of business under menu icon
     Location Should Be    https://smart-cliff-admin.vercel.app/business/wcy-hire-control
 
 Form filling page verify
@@ -67,6 +76,8 @@ Verify The Search Functionality
     Click On Create
     Enter a name in the input field.
     The entered name should be displayed in the filter section below.
+
+
 
 
 
