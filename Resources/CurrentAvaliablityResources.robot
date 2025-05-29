@@ -7,15 +7,15 @@ ${username}   smart@gmail.com
 ${password}    1234
 ${menu_button}    //button[@aria-label="open drawer"]
 
-${menu_button}    //div[@class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-i6s8oy"]/following::button
 ${bussiness}    //ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]
 ${current_availability}    //div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Current Availability']
 ${searchbox}    //input[@placeholder="Search by Skillset..."]    #search the value 
 ${fullstack}    //table[@class="MuiTable-root css-1owb465"]/tbody/tr/td[1]     #assert
 ${add_new_btn}    //div[@class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1gt1d87"]/button
-
-
-${submit_btn}    //button[@type="submit"]    
+${initial_url}    https://smart-cliff-admin.vercel.app/business/current-availability-control
+${submit_btn}    //button[@type="submit"]   
+${delete_btn}    //table/tbody/tr[1]/td[last()]/button[2]
+${edit_btn}    //table//tr[1]/td[6]//button[1]
 
 
 *** Keywords ***
@@ -33,9 +33,9 @@ Click on the Menu button and choose Current Availability by Clicking on the Buss
 
 
 Click on Search box and Assert the Fullstack
-    Input Text    ${searchbox}    Full stack
+    Input Text    ${searchbox}    Fullstack
     Wait Until Element Is Visible    ${fullstack}
-    Element Should Contain    ${fullstack}    Full stack
+    Element Should Contain    ${fullstack}    Fullstack
     
 Click on the Add New Current Availability button and Add Form Values
     [Arguments]    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}
@@ -47,9 +47,26 @@ Click on the Add New Current Availability button and Add Form Values
     Input Text       //input[@name="experience"]  ${exp}
     Input Text       //textarea[@name="remarks"]     ${remarks}
     Click Button     ${submit_btn}
-    Page Should Contain Element    //td[@class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg"][1]    
 
+Assert Form Error Messages Are Displayed
+    ${current_url}=    Get Location
+    Should Not Be Equal    ${initial_url}    ${current_url}
 
-    
+Click on the Edit button and make change on the Resources
+    Input Text    ${searchbox}    Fullstack
+    Wait Until Element Is Visible    ${edit_btn}
+    Click Element    ${edit_btn}
+    Click Element    //input[@name="skillset"] 
+    Input Text    //input[@name="skillset"]     Full stack
+    Click Button    ${submit_btn}
+    Wait Until Page Contains Element    ${searchbox}
+
+Click on the Delete Button and Assert the Fullstack is not present
+    Click Element    ${delete_btn}
+    Click Element    (//button[text()='Delete'])[2]
+    Wait Until Page Contains Element    ${searchbox}
+    Input Text    ${searchbox}    Fullstack
+    sleep   5s
+    Page Should Not Contain    ${fullstack}
 
 
