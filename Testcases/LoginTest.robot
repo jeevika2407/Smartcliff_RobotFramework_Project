@@ -11,6 +11,7 @@ ${Password}
 
 *** Test Cases ***
 Validate Login Test    ${Username}    ${Password}
+    [Tags]    smoke    login
 
 *** Keywords ***
 validate login
