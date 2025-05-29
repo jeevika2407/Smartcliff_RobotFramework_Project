@@ -12,16 +12,22 @@ ${expected_name}    txt
 
 *** Test Cases ***
 Verify It Reached Home Page 
+    [Tags]    smoke    home
     Home Page Verify
 Verify It Reached "Why Can You" Page by clicking on menu bar
+    [Tags]    reg    menubar        
     click menu bar and verify it reached Why Can You Page
 Verify It Reached "Why Can You" Page by clicking on icon
+    [Tags]    smoke    icon
     click icon and verify why can you page
 Verify it reached form filling page
+    [Tags]    reg    fillform
     Form filling page verify
 Add New WCY Hire After Successful Login
+    [Tags]    smoke    addwcy
     Add New Hire Form
 Search Title By Name
+    [Tags]    smoke    search
     Verify The Search Functionality
 
 *** Keywords ***
