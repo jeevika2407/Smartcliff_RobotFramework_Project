@@ -3,8 +3,6 @@ Library    SeleniumLibrary
 Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Resource   ../Resources/HowItWorkResources.robot
-Library    DataDriver    file=../Utility/sample.csv    encoding=utf_8    dialect=unix
-
 
 *** Variables ***
 ${Username}    smart@gmail.com
@@ -49,12 +47,12 @@ Add New How It Work with Valid Data
     LoginResources.fill the login form    ${Username}    ${Password}
     HowItWorkResources.User visit the How It Work page By clicking icon
     HowItWorkResources.Add New How It Work with Valid Data    good this is a title    this is a description
+    GenericResources.close the browser session
 Search How It Work with Valid Data
     GenericResources.Open the browser with url
     LoginResources.fill the login form    ${Username}    ${Password}
     HowItWorkResources.User visit the How It Work page By clicking icon
     HowItWorkResources.Search How It Work with Valid Data    good this is a title
-    GenericResources.close the browser session
     GenericResources.close the browser session
 Search How It Work with Invalid Data
     GenericResources.Open the browser with url
