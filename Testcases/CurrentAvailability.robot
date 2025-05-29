@@ -16,11 +16,6 @@ Current Availability Entry Test
     [Tags]    current_availability      regression
     Validate Current Availability Data Entry
 
-# Performing Delete Action in Current Availability
-#     [Template]    NONE
-#     Assert wheather the page is in CURRENT AVAILABILITY CONTROL PAGE
-#     Click on the Delete Button and Assert the Fullstack is not present
-
 *** Keywords ***
 
 Validate Current Availability Data Entry
