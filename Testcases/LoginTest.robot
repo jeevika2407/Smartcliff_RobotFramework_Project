@@ -4,6 +4,7 @@ Library    DataDriver   file=../Utility/logindata.xlsx    sheet_name=Sheet1
 Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Test Template    validate login
+Test Teardown       Close the browser session
 
 *** Variables ***
 ${Username}

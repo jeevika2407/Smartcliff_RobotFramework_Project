@@ -4,6 +4,7 @@ Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Resource    ../Resources/ClientResources.robot
 Library    DataDriver    file=../Utility/Filterdata.csv    encoding=utf_8    dialect=unix
+Test Teardown       Close the browser session
 
 * Variables *
 ${Filtertype}
