@@ -9,16 +9,14 @@ ${add}        xpath=//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 M
 ${title}      xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input
 ${type}       xpath=//div[@class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-qiwgdb']
 ${trainUs}    xpath=(//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1km1ehz']/following-sibling::li)[1]
-${img}    ${CURDIR}${/}sampleFile.jpeg
-
-${addDef}    xpath=//div[@class='MuiStack-root css-95g4uk']/button
-${tit}    xpath=(//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/input)[2]
+${img}        ${CURDIR}${/}sampleFile.jpeg
+${addDef}     xpath=//div[@class='MuiStack-root css-95g4uk']/button
+${tit}        xpath=(//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/input)[2]
 ${textbox}    xpath=(//div/textarea)[3]
-${icon}    ${CURDIR}${/}colorIcon.png
-
+${icon}       ${CURDIR}${/}colorIcon.png
 ${create}     xpath=//div[@class='MuiBox-root css-1vfa8p7']/button
 ${actual-name-list}    xpath=//tr[@class='MuiTableRow-root css-1gqug66']/td[2]
-
+${searchbox}  xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedStart css-2xhzvc']/descendant::input
 
 *** Keywords ***
 Click The Menu Bar
@@ -36,26 +34,26 @@ Fill The New Hire Form
     Click Element    ${type}
     Click Element    ${trainUs}
     Wait Until Page Contains Element    //input[@type="file"]    timeout=10s
-    Execute JavaScript    document.querySelector("input[type='file']").style.display = 'block';
+    Execute JavaScript    document.querySelector("input[type='file']").style.display = 'block'
     Sleep    2s
     Choose File    //input[@type="file"]    ${img}
     Sleep    5s
 
-Click on the add definition
+Click On The Add Definition
     Click Button    ${addDef}
 
-Fill the add definition form
+Fill The Add Definition Form
     Input Text    ${tit}    this is description
     Input Text    ${textbox}    complete Robot Framework test file using the SeleniumLibrary
     Wait Until Page Contains Element    //input[@type="file"]    timeout=10s
-    Execute JavaScript    document.querySelector("input[type='file']").style.display = 'block';
+    Execute JavaScript    document.querySelector("input[type='file']").style.display = 'block'
     Sleep    2s
     Choose File    //input[@type="file"]    ${icon}
     Sleep    5s
 
-click on create
+Click On Create
     Click Button    ${create}
-    Sleep    2
+    Sleep    2s
 
 Check If Name Exists In Filtered List
     [Arguments]    ${name}
@@ -67,10 +65,6 @@ Check If Name Exists In Filtered List
         IF    '${text}' == '${name}'
             ${found}=    Set Variable    True
             BREAK
-        END    
-        Run Keyword If    '${text}' == '${name}'    Exit For Loop
+        END
     END
     Should Be True    ${found}    msg=Name '${name}' not found in the list!
-    
-
-
