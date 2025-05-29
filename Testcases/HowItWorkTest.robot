@@ -9,15 +9,23 @@ ${Username}    smart@gmail.com
 ${Password}    1234
 
 *** Test Cases ***
-Working with How It Work Page Valid
+Working with How It Work Page with Valid Credentials
     Working with How It Work Page    ${Username}    ${Password}
+Clicking Icon on How It Work Page
     Working with How It Work Page By clicking icon    ${Username}    ${Password}
+Add New How It Work Entry with Valid Data
     Add New How It Work with Valid Data    ${Username}    ${Password}
+Add New How It Work Entry with Invalid Data
     Add New How It Work with Invalid Data    ${Username}    ${Password}
+Search How It Work with Valid Data
     Search How It Work with Valid Data    ${Username}    ${Password}
+Search How It Work with Invalid Data
     search How It Work with Invalid Data    ${Username}    ${Password}
+Delete How It Work Entry
     Delete How It Work    ${Username}    ${Password}
+Edit How It Work Entry
     Edit How It Work    ${Username}    ${Password}
+
 *** Keywords ***
 Working with How It Work Page
     [Arguments]    ${Username}    ${Password}

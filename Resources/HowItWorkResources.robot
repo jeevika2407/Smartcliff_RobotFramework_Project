@@ -18,6 +18,7 @@ ${submit}    xpath = //*[@class="MuiButtonBase-root MuiButton-root MuiButton-con
 ${IMAGE_PATH}    ${CURDIR}${/}samplepic.jpg
 ${search_Box}    xpath = //input[@class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedStart css-162edyi"]
 ${search_element}    xpath = //*[@class="MuiTable-root css-1owb465"]//child :: tbody
+${wrong_search_element}    xpath = //*[@class="MuiBox-root css-dvxtzn"]//child::h6
 ${delete_icon}    xpath = (//*[@class="MuiBox-root css-1i27l4i"]//child::button[2])[last()]
 ${delete_button}    xpath = //*[@class="MuiDialogActions-root MuiDialogActions-spacing css-33pgcr"]//child::button[2]
 ${Edit_button}    xpath = (//*[@class="MuiBox-root css-1i27l4i"]//button[1])[last()]
@@ -73,7 +74,7 @@ Search How It Work with Invalid Data
     [Arguments]    ${search_text}
     Input Text    ${search_Box}    ${search_text}
     Sleep    2s
-    Page Should Not Contain Element    ${search_element}
+    Page Should Contain Element    ${wrong_search_element}
 
 delete How It Work
     ${row_count}=    Get Element Count    ${count}
