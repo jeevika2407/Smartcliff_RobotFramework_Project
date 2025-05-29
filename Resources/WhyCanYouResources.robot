@@ -18,7 +18,8 @@ ${create}     xpath=//div[@class='MuiBox-root css-1vfa8p7']/button
 ${actual-name-list}    xpath=//tr[@class='MuiTableRow-root css-1gqug66']/td[2]
 ${search-name}  xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedStart css-2xhzvc']/descendant::input
 ${name}    txt
-
+${business_icon}    xpath=//*[@class="MuiList-root MuiList-padding css-1ontqvh"]//child::li[6]
+${wcy_icon}    xpath=//*[@id="drawer"]/div/ul/li[6]/div[2]/div/div/div/div[2]
 *** Keywords ***
 Click The Menu Bar
     Wait Until Element Is Visible    ${menu}    timeout=10s
@@ -30,6 +31,11 @@ Click Option Under Menu Bar
     Wait Until Element Is Visible    ${whyareyou}    timeout=10s
     Click Element    ${whyareyou}
 
+Click icon of business under menu icon
+    Wait Until Element Is Visible    ${business}    timeout=10s
+    Click Element    ${business_icon}
+    Wait Until Element Is Visible    ${whyareyou}    timeout=10s
+    Click Element    ${wcy_icon}
 
 Add A New Hire
     Wait Until Element Is Visible    ${add}    timeout=10s
@@ -92,4 +98,5 @@ The entered name should be displayed in the filter section below.
         END        
     END
     Should Be True    ${found}
+
 
