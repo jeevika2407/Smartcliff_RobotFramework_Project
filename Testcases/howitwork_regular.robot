@@ -17,7 +17,7 @@ clicking on the three lines icon on How It Work Page
 Clicking Icon on How It Work Page
     [Tags]    sanity    howitworknavigation
     Working with How It Work Page By clicking icon        
-Add New How It Work Entry with Invalid Data
+Add New How It Work with Valid Data
     [Tags]    negative    howitworkform
     Add New How It Work with Invalid Data      
 Search How It Work with Valid Data
@@ -44,17 +44,17 @@ Working with How It Work Page By clicking icon
     LoginResources.fill the login form    ${Username}    ${Password} 
     HowItWorkResources.User visit the How It Work page By clicking icon   
     GenericResources.close the browser session
-Add New How It Work with Invalid Data
+Add New How It Work with Valid Data
     GenericResources.Open the browser with url
     LoginResources.fill the login form    ${Username}    ${Password}
     HowItWorkResources.User visit the How It Work page By clicking icon
-    HowItWorkResources.Add New How It Work with Invalid Data    THIS IS TITLE    THIS IS DESCRIPTION
-    GenericResources.close the browser session
+    HowItWorkResources.Add New How It Work with Valid Data    good this is a title    this is a description
 Search How It Work with Valid Data
     GenericResources.Open the browser with url
     LoginResources.fill the login form    ${Username}    ${Password}
     HowItWorkResources.User visit the How It Work page By clicking icon
     HowItWorkResources.Search How It Work with Valid Data    good this is a title
+    GenericResources.close the browser session
     GenericResources.close the browser session
 Search How It Work with Invalid Data
     GenericResources.Open the browser with url

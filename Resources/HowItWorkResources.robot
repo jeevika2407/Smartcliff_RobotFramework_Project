@@ -49,9 +49,9 @@ Add New How It Work with Valid Data
     Choose File    ${file_input}    ${IMAGE_PATH}
     sleep    2
     Click Element    ${submit}
-    # Wait Until Element Is Visible    ${count}    timeout=20s
-    # ${row_count1}=    Get Element Count    ${count}
-    # Should Not Be Equal    ${row_count}    ${row_count1}
+    Wait Until Element Is Visible    ${count}    timeout=20s
+    ${row_count1}=    Get Element Count    ${count}
+    Should Not Be Equal    ${row_count}    ${row_count1}
 
 Add New How It Work with Invalid Data
     [Arguments]    ${Heading}    ${Description_name}
@@ -60,6 +60,14 @@ Add New How It Work with Invalid Data
     Click Element    ${AddNer}
     Input Text    ${Title-path}    ${Heading}
     Input Text    ${Description}    ${Description_name}
+  Click Element    ${TYPE}
+    Click Element    ${Train_From_Us}
+    Sleep    2
+    Click Element    ${DROPZONE_AREA}
+    Sleep    1
+    ${file_input}=    Set Variable    css:input[type="file"][accept="image/*"]
+    Choose File    ${file_input}    ${IMAGE_PATH}
+    sleep    2
     Click Element    ${submit}
     sleep    5
     ${current_url}=    Get Location
