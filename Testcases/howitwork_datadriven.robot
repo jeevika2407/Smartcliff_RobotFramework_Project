@@ -18,7 +18,6 @@ Add New How It Work Entry with Invalid Data
 *** Keywords ***
 Add New How It Work with Invalid Data
     [Arguments]    ${Heading}=${EMPTY}    ${Description_name}=${EMPTY}
-    # Convert "NA" to empty string
     ${Heading}=    Run Keyword If    '${Heading}' == 'NA'    Set Variable    ${EMPTY}    ELSE    Set Variable    ${Heading}
     ${Description_name}=    Run Keyword If    '${Description_name}' == 'NA'    Set Variable    ${EMPTY}    ELSE    Set Variable    ${Description_name}
 
