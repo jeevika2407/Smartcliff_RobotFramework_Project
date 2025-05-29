@@ -1,13 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    DataDriver    file=../Utility/logindata.xlsx    sheet_name=Sheet1
+Library    DataDriver   file=../Utility/logindata.xlsx    sheet_name=Sheet1
 Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Test Template    validate login
 
 *** Variables ***
 ${Username}
-${Password}
+${Password}    
 
 *** Test Cases ***
 Validate Login Test    ${Username}    ${Password}

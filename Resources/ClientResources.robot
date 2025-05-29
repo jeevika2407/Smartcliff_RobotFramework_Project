@@ -18,6 +18,17 @@ ${submit}    xpath=//button[@class='MuiButtonBase-root MuiButton-root MuiButton-
 ${actual-name-list}    xpath=//tr/child::td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-q34dxg']
 ${search-name}    xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedStart css-2xhzvc']/child::input
 ${clear}    xpath=//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-3 css-18tn63a']/child::button
+${train_from_us}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li[2]
+${institute}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li[3]
+${home}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li[4]
+${choose-filter}    xpath=//div[@id='type-filter']
+${filter-list}    xpath=//span[@class='MuiChip-label MuiChip-labelMedium css-11lqbxm']
+${edit-icon}    xpath=(//div[@class='MuiBox-root css-1brzdu3']/child::button)[1]
+${new-name}    Keerthana
+${update}    xpath=//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1r5h9n8']
+${verify-name}    xpath=(//tr[@class='MuiTableRow-root css-1gqug66']/td)[1]
+${del-icon}    xpath=(//button[//*[local-name()='svg']])[9]
+${del-confirm}    xpath=(//span[@class='MuiTouchRipple-root css-w0pj6f'])[36]/parent::button
 *** Keywords ***
 Click the menu button to open the sidebar.
     Wait Until Element Is Visible    ${menu}    10
@@ -51,7 +62,6 @@ Click the Submit button.
 
 To verify the new client added.    
     ${elements}=    Get WebElements    ${actual-name-list}
-    ${Names}=    Create List
     ${found}=    Set Variable    False
     FOR    ${element}    IN    @{elements}
         ${text}=    Get Text    ${element}
@@ -72,4 +82,110 @@ Click the 'Clear' button
 verify that the filter is removed correctly.
     Element Should Not Contain    ${search-name}    ${name}
 
+The entered name should be displayed in the filter section below.
+    ${elements}=    Get WebElements    ${actual-name-list}
+    ${found}=    Set Variable    False
+    FOR    ${element}    IN    @{elements}
+        ${text}=    Get Text    ${element}
+        Log To Console    ${text}
+        IF    '${text}'=='${name}'
+            ${found}=    Set Variable    True
+            BREAK
+        END        
+    END
+    Should Be True    ${found}
+
+The user selects a specific type.
+    Click Element    ${choose-filter}
+
+Verify that the corresponding items are displayed below.
+    [Arguments]    ${Filtertype}
+    Log To Console    ${Filtertype}
+    
+    IF    '${Filtertype}' == 'Train From Us'
+        Wait Until Element Is Visible    ${train_from_us}    timeout=10
+        Click Element    ${train_from_us}
+        ${elements}=    Get WebElements    ${filter-list}
+        ${length}=    Get Length    ${elements}
+        IF    ${length} == 0
+            Log To Console    No elements present
+        ELSE
+            ${found}=    Set Variable    True
+            FOR    ${element}    IN    @{elements}
+            ${text}=    Get Text    ${element}
+                IF    '${text}'!='Train From Us'
+                    ${found}=    Set Variable    False
+                    BREAK
+                END   
+                Should Be True    ${found}
+            END
+        END
+    END
+    IF    '${Filtertype}' == 'Institute'
+        Wait Until Element Is Visible    ${institute}    timeout=10
+        Click Element    ${institute}
+        ${elements}=    Get WebElements    ${filter-list}
+        ${found}=    Set Variable    True
+        FOR    ${element}    IN    @{elements}
+        ${text}=    Get Text    ${element}
+            IF    '${text}'!='Institute'
+                ${found}=    Set Variable    False
+                BREAK
+            END   
+            Should Be True    ${found}
+        END
+    END      
+    IF    '${Filtertype}' == 'Home'
+        Wait Until Element Is Visible    ${home}    timeout=10
+        Click Element    ${home}
+        ${elements}=    Get WebElements    ${filter-list}
+        ${length}=    Get Length    ${elements}
+        IF    ${length} == 0
+            Log To Console    No elements present
+        ELSE
+            ${found}=    Set Variable    True
+            FOR    ${element}    IN    @{elements}
+            ${text}=    Get Text    ${element}
+                IF    '${text}'!='Home'
+                    ${found}=    Set Variable    False
+                    BREAK
+                END   
+                Should Be True    ${found}
+            END
+        END
+    END 
+
+
+Click the edit icon.
+    Click Button    ${edit-icon}
+
+Change the name of the client
+    Wait Until Element Is Visible    ${client-name}    timeout=5s
+    Click Element                    ${client-name}
+    Press Keys    ${client-name}    CTRL+A    DELETE
+    Input Text    ${client-name}    ${new-name}
+
+Click the Update button.
+    Click Button    ${update}
+
+Enter a updated name in the input field.
+    Input Text    ${search-name}    ${new-name}
+
+Verify that the modified name is updated to the client.
+    Element Text Should Be    ${verify-name}    ${new-name}
+    
+Click the delete icon.
+    Click Button    ${del-icon}
+Click the confirm button to proceed with the deletion.
+    Click Button    ${del-confirm}
+    
+    
+    
+
+    
+    
+        
+    
+    
+    
     
