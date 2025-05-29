@@ -1,44 +1,37 @@
 *** Settings ***
-Documentation    Current Availability Test Cases for Smartcliff Admin Website
-Library    SeleniumLibrary
-Library          DataDriver    file=/Users/sevvelkaranpalanivetrivel/Desktop/RobotPILOT/Smartcliff_RobotFramework_Project/Utility/CurrentAvailability.xlsx    sheet_name=Sheet1    
-Resource   ../Resources/GenericResources.robot
-Resource   ../Resources/LoginResources.robot
-Resource   ../Resources/CurrentAvaliablityResources.robot
-Test Template    Fill Current Availability Form With Excel Data Provided
-Test setup    Open the browser with url
-Test Teardown    close the browser session
+Documentation       Valid and Invalid Current Availability Data (empty values = invalid)
+Library             SeleniumLibrary
+Library             DataDriver    file=../Utility/CurrentAvailability.xlsx    sheet_name=Sheet1
+Resource            ../Resources/LoginResources.robot
+Resource           ../Resources/GenericResources.robot
+Resource            ../Resources/CurrentAvaliablityResources.robot
 
+Test Template       Validate Current Availability Data Entry
+Test Setup          Open the browser with url
+Test Teardown       Close the browser session
 
 *** Test Cases ***
-Verify the Current Availability Page by Logging In
-    ${username}=    Set Variable    smart@gmail.com
-    ${password}=    Set Variable    1234
-    Verify the Table conist of Fullstack and Assert Them
-    Fill Current Availability Form With Excel Data Provided
-    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}
-    Verify there is new added data in the table of Current Availability
-    
+
+Current Availability Entry Test
+    [Tags]    current_availability      regression
+    Validate Current Availability Data Entry
+
+# Performing Delete Action in Current Availability
+#     [Template]    NONE
+#     Assert wheather the page is in CURRENT AVAILABILITY CONTROL PAGE
+#     Click on the Delete Button and Assert the Fullstack is not present
 
 *** Keywords ***
-Verify the Current Availability Page by Logging In
+Validate Current Availability Data Entry
+    [Arguments]    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}    ${type}
     ${username}=    Set Variable    smart@gmail.com
     ${password}=    Set Variable    1234
-    LoginResources.fill the login form   ${username}    ${password}
+    LoginResources.fill the login form    ${username}    ${password}
     CurrentAvaliablityResources.Click on the Menu button and choose Current Availability by Clicking on the Bussiness
-
-Verify the Table conist of Fullstack and Assert Them
-    ${username}=    Set Variable    smart@gmail.com
-    ${password}=    Set Variable    1234
-    LoginResources.fill the login form   ${username}    ${password}
-    CurrentAvaliablityResources.Click on the Menu button and choose Current Availability by Clicking on the Bussiness 
-    CurrentAvaliablityResources.Click on Search box and Assert the Fullstack
-
-Fill Current Availability Form With Excel Data Provided
-    [Arguments]    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}
-    ${username}=    Set Variable    smart@gmail.com
-    ${password}=    Set Variable    1234
-    LoginResources.fill the login form   ${username}    ${password}
-    CurrentAvaliablityResources.Click on the Menu button and choose Current Availability by Clicking on the Bussiness 
     CurrentAvaliablityResources.Click on the Add New Current Availability button and Add Form Values    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}
+    sleep    2s
+    Run Keyword If    '${type}' == 'invalid'    Assert Form Error Messages Are Displayed
+    
+
+
 
