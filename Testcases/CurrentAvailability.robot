@@ -22,6 +22,7 @@ Current Availability Entry Test
 #     Click on the Delete Button and Assert the Fullstack is not present
 
 *** Keywords ***
+
 Validate Current Availability Data Entry
     [Arguments]    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}    ${type}
     ${username}=    Set Variable    smart@gmail.com
