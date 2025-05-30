@@ -6,11 +6,16 @@ Library    OperatingSystem
 
 *** Variables ***
 
+# Login credentials
 ${username}   smart@gmail.com
 ${password}    1234
+
+# Locators for navigation
 ${menu_button}    //button[@aria-label="open drawer"]
 ${bussiness}    //ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]
 ${learning_journey}    //div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']
+
+# Search and form fields
 ${searchbox_lj}    //input[@placeholder="Search Learning Journeys..."]
 ${add_btn}    (//button[@type='button'])[4]
 ${type}    //div[@role="combobox"]
@@ -28,24 +33,29 @@ ${delete2}    //div[@class="MuiDialogActions-root MuiDialogActions-spacing css-1
 
 *** Keywords ***
 
+# Logs into the application using provided credentials
 fill the login form
     [Arguments]    ${Username}    ${Password}
     Input Text    ${user}    ${Username}
     Input Password    ${pass}    ${Password}
     Click Button    ${login}
 
+# Opens the side menu and clicks on the Business section
 Click on the Menu Button and Click on Bussiness
     Click Element    ${menu_button}
     Click Element    ${bussiness}
 
+# Navigates to the Learning Journey section under Business
 Click on Learning Journey from Bussiness
     Click Element    ${learning_journey}
 
+# Searches for an existing learning journey titled 'hirefromus'
 Click on Search box and Insert Value as hirefromus
     Click Element    ${searchbox_lj}
     Input Text    ${searchbox_lj}    hirefromus
     Wait Until Element Is Visible    ${searchbox_lj}
 
+# Clicks on Add New button and fills in the Learning Journey form
 Click on Add new Learning Journey button and Fill the Form
     [Arguments]    ${title}    ${desc}    ${img}    
     Click Element    ${add_btn}
@@ -57,30 +67,31 @@ Click on Add new Learning Journey button and Fill the Form
     Input Text    ${text_area}    ${desc}
     ${img_abs}=    Normalize Path    ${CURDIR}/${img}
     Choose File     //input[@type='file']    ${img_abs}
-    sleep    5s
+    Wait Until Element Is Visible    ${submit_btn}    timeout=10s
     Click Element    ${submit_btn}
 
+# Validates that error messages are displayed (i.e., form submission failed)
 Assert Error Messages Are Displayed
     ${current_url}=    Get Location
     Should Not Be Equal    ${initial_url}    ${current_url}
 
+# Asserts that 'hirefromus' is present in the table
 Asserting the hirefromus in the Tablular Display
     Page Should Contain Element    //td[text()='hirefromus']
-    
+
+# Edits 'hirefromus' and updates it to 'trainfromus'    
 Edititng the hirefromus into trainfromus
     
     Click Element    ${edit}
     Click Element    ${type}
     Click Element    ${train}
-
     Click Element    ${submit_btn}
 
+# Verifies that 'trainfromus' is now shown in the table
 Assert the trainfromus in the Tablular Display
-
     Page Should Contain Element    //td[text()='trainfromus']
 
-        
-
+# Deletes the entry and verifies the item count is reduced
 Deleting an element from the Learning Journey Table
 
     @{rows}=    Get WebElements    xpath=//tbody[@class="MuiTableBody-root css-1xnox0e"]/tr/td[1]
