@@ -12,7 +12,7 @@ ${Password}    1234
 *** Test Cases ***
 Add New How It Work Entry with Invalid Data
     [Tags]    smoke    datadriven
-    [Template]    Add New How It Work with Invalid Data
+    [Template]    Add New How It Work with Invalid Data    
     ${Heading}    ${Description_name}
 
 *** Keywords ***
