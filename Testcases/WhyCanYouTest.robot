@@ -23,13 +23,16 @@ Verify It Reached "Why Can You" Page by clicking on icon
 Verify it reached form filling page
     [Tags]    reg    fillform
     Form filling page verify
-Add New WCY Hire After Successful Login
+Add New WCY Hire 
     [Tags]    smoke    addwcy
     Add New Hire Form
 Search Title By Name
     [Tags]    smoke    search
     Verify The Search Functionality
-
+Edit by changing the title
+    [Tags]    reg    edit
+    verify Update Client Details After Editing
+    
 *** Keywords ***
 Home Page Verify
     Open The Browser With URL
@@ -82,6 +85,22 @@ Verify The Search Functionality
     Click On Create
     Enter a name in the input field.
     The entered name should be displayed in the filter section below.
+
+verify Update Client Details After Editing
+    Open The Browser With URL
+    Fill The Login Form    ${email}    ${pwd}
+    Click The Menu Bar
+    Click Option Under Menu Bar
+    Add A New Hire
+    Fill The New Hire Form
+    Click On The Add Definition
+    Fill The Add Definition Form
+    Click On Create
+    Click on edit button
+    Change the name of the title
+    Enter the update button
+    Verify that the modified title is listed in the search 
+
 
 
 

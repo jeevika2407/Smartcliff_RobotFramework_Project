@@ -6,7 +6,7 @@ ${menu}       xpath=(//div[@class='MuiToolbar-root MuiToolbar-gutters MuiToolbar
 ${business}   xpath=(//div[@class='MuiListItemText-root css-1nmt8ps']/child::span)[6]
 ${whyareyou}  xpath=(//div[@class='MuiList-root css-1uzmcsd']/descendant::span)[3]
 ${add}        xpath=//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1gt1d87']/button
-${title}      xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input
+${title}      xpath=(//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input)[1]
 ${type}       xpath=//div[@class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-qiwgdb']
 ${trainUs}    xpath=(//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1km1ehz']/following-sibling::li)[1]
 ${img}        ${CURDIR}${/}sampleFile.jpeg
@@ -18,8 +18,17 @@ ${create}     xpath=//div[@class='MuiBox-root css-1vfa8p7']/button
 ${actual-name-list}    xpath=//tr[@class='MuiTableRow-root css-1gqug66']/td[2]
 ${search-name}  xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedStart css-2xhzvc']/descendant::input
 ${name}    txt
+${name1}    robot
 ${business_icon}    xpath=//*[@class="MuiList-root MuiList-padding css-1ontqvh"]//child::li[6]
 ${wcy_icon}    xpath=//*[@id="drawer"]/div/ul/li[6]/div[2]/div/div/div/div[2]
+
+${edit}    xpath=(//table//tbody//button)[1]
+${update}    xpath=//div[@class='MuiBox-root css-1vfa8p7']/button
+${updated-name}    robot framework
+
+${up_tit}    xpath=(//div[@class='MuiCardContent-root css-1qw96cp']/preceding::input)[1]
+${def-tit}    xpath=((//div[@class='MuiBox-root css-1coeexk']/parent::div/preceding-sibling::div)[2]/child::div)[1]/child::div/child::input
+
 *** Keywords ***
 Click The Menu Bar
     Wait Until Element Is Visible    ${menu}    timeout=10s
@@ -99,4 +108,34 @@ The entered name should be displayed in the filter section below.
     END
     Should Be True    ${found}
 
+Click On Edit Button
+    Wait Until Element Is Visible    ${edit}    timeout=10s
+    Click Button    ${edit}
 
+Change The Name Of The Title
+    Wait Until Element Is Visible    ${up_tit}    10s
+    Click Element    ${up_tit}
+    Press Keys    ${up_tit}    CTRL+A    DELETE
+    Sleep    1s
+    Input Text    ${up_tit}    ${updated-name}
+
+
+    Wait Until Element Is Visible    ${def-tit}    10s
+    Click Element    ${def-tit}
+    Press Keys    ${def-tit}    CTRL+A    DELETE
+    Sleep    1s
+    Input Text    ${def-tit}    new change made
+
+Enter The Update Button
+    Wait Until Element Is Visible    ${update}    timeout=10s
+    Click Button    ${update}
+    Sleep    2s
+
+Verify That The Modified Title Is Listed In The Search
+    Input Text    ${search-name}    ${updated-name}
+    Page Should Contain    ${updated-name}
+
+
+
+
+      
