@@ -60,7 +60,7 @@ Add New How It Work with Invalid Data
     Click Element    ${AddNer}
     Input Text    ${Title-path}    ${Heading}
     Input Text    ${Description}    ${Description_name}
-  Click Element    ${TYPE}
+    Click Element    ${TYPE}
     Click Element    ${Train_From_Us}
     Sleep    2
     Click Element    ${DROPZONE_AREA}
