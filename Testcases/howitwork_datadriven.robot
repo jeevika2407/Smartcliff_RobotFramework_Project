@@ -4,6 +4,7 @@ Library    DataDriver    file=../Utility/sample.csv    encoding=utf_8    dialect
 Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Resource   ../Resources/HowItWorkResources.robot
+Test Teardown       Close the browser session
 
 *** Variables ***
 ${Username}    smart@gmail.com

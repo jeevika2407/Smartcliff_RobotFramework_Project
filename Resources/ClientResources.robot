@@ -6,6 +6,7 @@ Library    Collections
 ${menu}    xpath=//div[@class='MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-i6s8oy']/child::button[1]
 ${business}    xpath=(//li[@class='MuiListItem-root MuiListItem-gutters css-bkmufr'])[6]/child::div
 ${client}    xpath=(//div[@class='MuiListItemText-root css-1tsvksn'])[4]/child::span
+${client-icon}    xpath=(//div[@class='MuiListItemIcon-root css-fj0vgj'])[4]
 ${client-url}    https://smart-cliff-admin.vercel.app/business/Client-control
 ${add}    xpath=(//button)[5]
 ${type-dropdown}    xpath=//div[@role='combobox']
@@ -28,7 +29,13 @@ ${new-name}    Keerthana
 ${update}    xpath=//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1r5h9n8']
 ${verify-name}    xpath=(//tr[@class='MuiTableRow-root css-1gqug66']/td)[1]
 ${del-icon}    xpath=(//button[//*[local-name()='svg']])[9]
-${del-confirm}    xpath=(//span[@class='MuiTouchRipple-root css-w0pj6f'])[36]/parent::button
+${del-confirm}    xpath=//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedError MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedError MuiButton-sizeMedium MuiButton-containedSizeMedium css-1ecefdc']
+${del-verify}    xpath=//div[@class='MuiAlert-message css-1xsto0d']
+${invalid-name-err}    xpath=//p[@class='MuiFormHelperText-root Mui-error MuiFormHelperText-sizeMedium MuiFormHelperText-contained MuiFormHelperText-filled Mui-required css-v7esy']
+${img-required-err}    xpath=//div[@class='MuiAlert-message css-1xsto0d']
+${back-but}    xpath=//div[@class='MuiBox-root css-1dfbuxp']/child::button
+${invalid-name}    abcdefgh
+${invalid-search-name-ver}    xpath=//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-1a4b21o']/child::p
 *** Keywords ***
 Click the menu button to open the sidebar.
     Wait Until Element Is Visible    ${menu}    10
@@ -162,7 +169,7 @@ Click the edit icon.
 Change the name of the client
     Wait Until Element Is Visible    ${client-name}    timeout=5s
     Click Element                    ${client-name}
-    Press Keys    ${client-name}    CTRL+A    DELETE
+    Press Keys     ${client-name}    CTRL+A    DELETE
     Input Text    ${client-name}    ${new-name}
 
 Click the Update button.
@@ -178,14 +185,24 @@ Click the delete icon.
     Click Button    ${del-icon}
 Click the confirm button to proceed with the deletion.
     Click Button    ${del-confirm}
+ Click the Client icon under Business.
+     Click Element    ${client-icon}
+To verify that the client should be deleted
+    Element Should Be Visible    ${del-verify}
     
-    
-    
-
-    
-    
-        
-    
-    
-    
+Enter the invalid name
+    [Arguments]    ${invalid-name}
+    Input Text    ${client-name}    ${invalid-name}
+To verify the error message displayed in the name field.
+    Element Text Should Be    ${invalid-name-err}    Name must contain only alphabets
+To verify the error message displayed in the image field.
+    Page Should Contain   Image is required
+Click the back button
+    Click Button    ${back-but}
+To verify that it navigates to the client panel page.
+    Location Should Be    ${client-url}    
+Enter a invalid-name in the input field.
+    Input Text    ${search-name}    ${invalid-name}
+To verify that no records are found in the client list.
+    Element Text Should Be    ${invalid-search-name-ver}    No entries found
     
