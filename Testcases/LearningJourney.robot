@@ -10,11 +10,15 @@ Test Setup       Open the browser with url
 Test Teardown    Close the browser session
 
 *** Test Cases ***
+
+# Test case to add Learning Journey entries using data-driven values from Excel
 Add Journey from Excel
-    # [Template]    Add Learning Journey From Excel
+    
     [Tags]    Learning_Journey      regression
 
 *** Keywords ***
+
+# Keyword to add a new Learning Journey using form inputs provided from Excel
 Add Learning Journey From Excel
 
     [Arguments]    ${title}    ${desc}    ${img}    ${type}

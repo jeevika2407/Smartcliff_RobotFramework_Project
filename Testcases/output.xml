@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on darwin)" generated="2025-05-29T21:05:15.868328" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on darwin)" generated="2025-05-30T15:40:39.675511" rpa="false" schemaversion="5">
 <suite id="s1" name="LearningJourney2" source="/Users/sevvelkaranpalanivetrivel/Desktop/PILOT/Smartcliff_RobotFramework_Project-1/Testcases/LearningJourney2.robot">
-<test id="s1-t1" name="Login and Navigate to Learning Journey" line="12">
+<test id="s1-t1" name="Login and Navigate to Learning Journey" line="13">
 <kw name="Open the browser with url" owner="GenericResources" type="SETUP">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-29T21:05:16.422575" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1044fee40&gt;</msg>
+<msg time="2025-05-30T15:40:40.246896" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x102fa2e40&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-29T21:05:16.422156" elapsed="0.000478"/>
+<status status="PASS" start="2025-05-30T15:40:40.246483" elapsed="0.000471"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--incognito</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:16.422847" elapsed="0.000199"/>
+<status status="PASS" start="2025-05-30T15:40:40.247169" elapsed="0.000200"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-extensions</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:16.423196" elapsed="0.000171"/>
+<status status="PASS" start="2025-05-30T15:40:40.247529" elapsed="0.000174"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-notifications</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:16.423504" elapsed="0.000166"/>
+<status status="PASS" start="2025-05-30T15:40:40.247843" elapsed="0.000169"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-popup-blocking</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:16.423805" elapsed="0.000244"/>
+<status status="PASS" start="2025-05-30T15:40:40.248147" elapsed="0.000172"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--start-maximized</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:16.424219" elapsed="0.000169"/>
+<status status="PASS" start="2025-05-30T15:40:40.248456" elapsed="0.000165"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-29T21:05:16.424798" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<msg time="2025-05-30T15:40:40.249032" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
 <var>${prefs}</var>
 <arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-29T21:05:16.424539" elapsed="0.000304"/>
+<status status="PASS" start="2025-05-30T15:40:40.248763" elapsed="0.000316"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
@@ -59,164 +59,166 @@
 <arg>prefs</arg>
 <arg>${prefs}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:16.424978" elapsed="0.000193"/>
+<status status="PASS" start="2025-05-30T15:40:40.249223" elapsed="0.000202"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:16.425686" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<msg time="2025-05-30T15:40:40.249926" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-29T21:05:16.425340" elapsed="3.119995"/>
+<status status="PASS" start="2025-05-30T15:40:40.249595" elapsed="3.983421"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-29T21:05:19.546120" elapsed="0.004025"/>
+<status status="PASS" start="2025-05-30T15:40:44.234616" elapsed="0.045797"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-29T21:05:19.550551" elapsed="0.002450"/>
+<status status="PASS" start="2025-05-30T15:40:44.280659" elapsed="0.002622"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:16.421189" elapsed="3.132096"/>
+<status status="PASS" start="2025-05-30T15:40:40.245482" elapsed="4.038031"/>
 </kw>
 <kw name="fill the login form" owner="LoginResources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:19.555779" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<msg time="2025-05-30T15:40:44.286243" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
 <arg>${user}</arg>
 <arg>${Username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:19.554815" elapsed="0.677141"/>
+<status status="PASS" start="2025-05-30T15:40:44.285616" elapsed="1.319291"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:20.232975" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
-<msg time="2025-05-29T21:05:20.283045" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-05-30T15:40:45.606354" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-30T15:40:45.670579" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${pass}</arg>
 <arg>${Password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:20.232372" elapsed="0.173770"/>
+<status status="PASS" start="2025-05-30T15:40:45.605366" elapsed="0.279484"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:20.406944" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<msg time="2025-05-30T15:40:45.886013" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
 <arg>${login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:20.406539" elapsed="0.201273"/>
+<status status="PASS" start="2025-05-30T15:40:45.885430" elapsed="0.269151"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-29T21:05:25.609900" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-05-30T15:40:51.156129" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-29T21:05:20.608142" elapsed="5.002137"/>
+<status status="PASS" start="2025-05-30T15:40:46.154826" elapsed="5.001543"/>
 </kw>
 <arg>${username}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-29T21:05:19.553929" elapsed="6.056640"/>
+<status status="PASS" start="2025-05-30T15:40:44.284926" elapsed="6.871705"/>
 </kw>
 <kw name="Click on the Menu Button and Click on Bussiness" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:25.613688" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
+<msg time="2025-05-30T15:40:51.159021" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
 <arg>${menu_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:25.612073" elapsed="0.201515"/>
+<status status="PASS" start="2025-05-30T15:40:51.158245" elapsed="0.149289"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:25.814070" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
+<msg time="2025-05-30T15:40:51.308039" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
 <arg>${bussiness}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:25.813802" elapsed="0.279074"/>
+<status status="PASS" start="2025-05-30T15:40:51.307757" elapsed="0.274146"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:25.611272" elapsed="0.481814"/>
+<status status="PASS" start="2025-05-30T15:40:51.157495" elapsed="0.424550"/>
 </kw>
 <kw name="Click on Learning Journey from Bussiness" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:26.094995" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']'.</msg>
+<msg time="2025-05-30T15:40:51.583103" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']'.</msg>
 <arg>${learning_journey}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:26.094536" elapsed="0.362899"/>
+<status status="PASS" start="2025-05-30T15:40:51.582862" elapsed="0.362713"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:26.093888" elapsed="0.363797"/>
+<status status="PASS" start="2025-05-30T15:40:51.582469" elapsed="0.363288"/>
 </kw>
 <kw name="Click on Search box and Insert Value as hirefromus" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:26.459241" level="INFO">Clicking element '//input[@placeholder="Search Learning Journeys..."]'.</msg>
+<msg time="2025-05-30T15:40:51.946705" level="INFO">Clicking element '//input[@placeholder="Search Learning Journeys..."]'.</msg>
 <arg>${searchbox_lj}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:26.458935" elapsed="0.834808"/>
+<status status="PASS" start="2025-05-30T15:40:51.946449" elapsed="0.463336"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:27.294344" level="INFO">Typing text 'hirefromus' into text field '//input[@placeholder="Search Learning Journeys..."]'.</msg>
+<msg time="2025-05-30T15:40:52.412478" level="INFO">Typing text 'hirefromus' into text field '//input[@placeholder="Search Learning Journeys..."]'.</msg>
 <arg>${searchbox_lj}</arg>
 <arg>hirefromus</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.294018" elapsed="0.390131"/>
+<status status="PASS" start="2025-05-30T15:40:52.411382" elapsed="0.307151"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${searchbox_lj}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.684609" elapsed="0.025098"/>
+<status status="PASS" start="2025-05-30T15:40:52.725721" elapsed="0.027433"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:26.458445" elapsed="1.251479"/>
+<status status="PASS" start="2025-05-30T15:40:51.946086" elapsed="0.807315"/>
 </kw>
 <kw name="close the browser session" owner="GenericResources" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.712612" elapsed="0.247441"/>
+<status status="PASS" start="2025-05-30T15:40:52.755689" elapsed="0.212716"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:27.711382" elapsed="0.249249"/>
+<status status="PASS" start="2025-05-30T15:40:52.755087" elapsed="0.213686"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:16.420193" elapsed="11.541908"/>
+<tag>regression</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2025-05-30T15:40:40.244335" elapsed="12.724765"/>
 </test>
-<test id="s1-t2" name="Assert hirefromus in the Tablular Display" line="19">
+<test id="s1-t2" name="Assert hirefromus in the Tablular Display" line="23">
 <kw name="Open the browser with url" owner="GenericResources" type="SETUP">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-29T21:05:27.969038" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1045f47d0&gt;</msg>
+<msg time="2025-05-30T15:40:52.973735" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x103098690&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.966361" elapsed="0.002760"/>
+<status status="PASS" start="2025-05-30T15:40:52.973000" elapsed="0.000826"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--incognito</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.969387" elapsed="0.000467"/>
+<status status="PASS" start="2025-05-30T15:40:52.974529" elapsed="0.000443"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-extensions</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.970178" elapsed="0.000766"/>
+<status status="PASS" start="2025-05-30T15:40:52.975293" elapsed="0.000416"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-notifications</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.971284" elapsed="0.000446"/>
+<status status="PASS" start="2025-05-30T15:40:52.976041" elapsed="0.000347"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-popup-blocking</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.972048" elapsed="0.000356"/>
+<status status="PASS" start="2025-05-30T15:40:52.976613" elapsed="0.000203"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--start-maximized</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.972694" elapsed="0.000371"/>
+<status status="PASS" start="2025-05-30T15:40:52.976965" elapsed="0.000181"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-29T21:05:27.974047" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<msg time="2025-05-30T15:40:52.977734" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
 <var>${prefs}</var>
 <arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.973515" elapsed="0.000619"/>
+<status status="PASS" start="2025-05-30T15:40:52.977408" elapsed="0.000376"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
@@ -224,173 +226,175 @@
 <arg>prefs</arg>
 <arg>${prefs}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.974970" elapsed="0.000798"/>
+<status status="PASS" start="2025-05-30T15:40:52.977948" elapsed="0.000219"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:27.977078" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<msg time="2025-05-30T15:40:52.978754" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-29T21:05:27.976172" elapsed="2.964573"/>
+<status status="PASS" start="2025-05-30T15:40:52.978366" elapsed="2.895728"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-29T21:05:30.941287" elapsed="0.003557"/>
+<status status="PASS" start="2025-05-30T15:40:55.874644" elapsed="0.004760"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-29T21:05:30.945099" elapsed="0.001490"/>
+<status status="PASS" start="2025-05-30T15:40:55.879645" elapsed="0.001426"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:27.965748" elapsed="2.981100"/>
+<status status="PASS" start="2025-05-30T15:40:52.972315" elapsed="2.908953"/>
 </kw>
 <kw name="fill the login form" owner="LoginResources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:30.948324" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<msg time="2025-05-30T15:40:55.882907" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
 <arg>${user}</arg>
 <arg>${Username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:30.947962" elapsed="0.649693"/>
+<status status="PASS" start="2025-05-30T15:40:55.882560" elapsed="0.614332"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:31.598503" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
-<msg time="2025-05-29T21:05:31.693550" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-05-30T15:40:56.497707" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-30T15:40:56.540142" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${pass}</arg>
 <arg>${Password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:31.598008" elapsed="0.288586"/>
+<status status="PASS" start="2025-05-30T15:40:56.497231" elapsed="0.152637"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:31.887587" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<msg time="2025-05-30T15:40:56.651033" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
 <arg>${login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:31.887031" elapsed="0.208989"/>
+<status status="PASS" start="2025-05-30T15:40:56.650675" elapsed="0.207366"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-29T21:05:37.098262" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-05-30T15:41:01.860062" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-29T21:05:32.096758" elapsed="5.001641"/>
+<status status="PASS" start="2025-05-30T15:40:56.858253" elapsed="5.002050"/>
 </kw>
 <arg>${username}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-29T21:05:30.947384" elapsed="6.151140"/>
+<status status="PASS" start="2025-05-30T15:40:55.881953" elapsed="5.978583"/>
 </kw>
 <kw name="Click on the Menu Button and Click on Bussiness" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:37.099751" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
+<msg time="2025-05-30T15:41:01.863714" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
 <arg>${menu_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:37.099488" elapsed="0.132924"/>
+<status status="PASS" start="2025-05-30T15:41:01.862913" elapsed="0.111539"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:37.232943" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
+<msg time="2025-05-30T15:41:01.974987" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
 <arg>${bussiness}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:37.232654" elapsed="0.292539"/>
+<status status="PASS" start="2025-05-30T15:41:01.974692" elapsed="0.264436"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:37.099085" elapsed="0.426321"/>
+<status status="PASS" start="2025-05-30T15:41:01.861158" elapsed="0.378109"/>
 </kw>
 <kw name="Click on Learning Journey from Bussiness" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:37.526766" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']'.</msg>
+<msg time="2025-05-30T15:41:02.240161" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']'.</msg>
 <arg>${learning_journey}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:37.526467" elapsed="0.296062"/>
+<status status="PASS" start="2025-05-30T15:41:02.239916" elapsed="0.376407"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:37.526034" elapsed="0.296799"/>
+<status status="PASS" start="2025-05-30T15:41:02.239577" elapsed="0.376966"/>
 </kw>
 <kw name="Click on Search box and Insert Value as hirefromus" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:37.824789" level="INFO">Clicking element '//input[@placeholder="Search Learning Journeys..."]'.</msg>
+<msg time="2025-05-30T15:41:02.619466" level="INFO">Clicking element '//input[@placeholder="Search Learning Journeys..."]'.</msg>
 <arg>${searchbox_lj}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:37.823502" elapsed="1.131353"/>
+<status status="PASS" start="2025-05-30T15:41:02.617703" elapsed="0.696316"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:38.955904" level="INFO">Typing text 'hirefromus' into text field '//input[@placeholder="Search Learning Journeys..."]'.</msg>
+<msg time="2025-05-30T15:41:03.314819" level="INFO">Typing text 'hirefromus' into text field '//input[@placeholder="Search Learning Journeys..."]'.</msg>
 <arg>${searchbox_lj}</arg>
 <arg>hirefromus</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:38.955502" elapsed="0.343859"/>
+<status status="PASS" start="2025-05-30T15:41:03.314481" elapsed="0.286804"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${searchbox_lj}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.299761" elapsed="0.027178"/>
+<status status="PASS" start="2025-05-30T15:41:03.601542" elapsed="0.023479"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:37.823166" elapsed="1.503918"/>
+<status status="PASS" start="2025-05-30T15:41:02.617141" elapsed="1.008013"/>
 </kw>
 <kw name="Asserting the hirefromus in the Tablular Display" owner="LearningJourneyResources">
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:39.343161" level="INFO">Current page contains element '//td[text()='hirefromus']'.</msg>
+<msg time="2025-05-30T15:41:03.641544" level="INFO">Current page contains element '//td[text()='hirefromus']'.</msg>
 <arg>//td[text()='hirefromus']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.327730" elapsed="0.015548"/>
+<status status="PASS" start="2025-05-30T15:41:03.625843" elapsed="0.015815"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:39.327379" elapsed="0.016021"/>
+<status status="PASS" start="2025-05-30T15:41:03.625483" elapsed="0.016291"/>
 </kw>
 <kw name="close the browser session" owner="GenericResources" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.344798" elapsed="0.282693"/>
+<status status="PASS" start="2025-05-30T15:41:03.642869" elapsed="0.156424"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:39.343986" elapsed="0.283767"/>
+<status status="PASS" start="2025-05-30T15:41:03.642278" elapsed="0.157259"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:27.963647" elapsed="11.664579"/>
+<tag>regression</tag>
+<tag>sanity</tag>
+<status status="PASS" start="2025-05-30T15:40:52.970123" elapsed="10.829637"/>
 </test>
-<test id="s1-t3" name="Edit Learing Journey hireformus -&gt; trainfromus" line="27">
+<test id="s1-t3" name="Edit Learing Journey hireformus -&gt; trainfromus" line="34">
 <kw name="Open the browser with url" owner="GenericResources" type="SETUP">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-29T21:05:39.631295" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x104022350&gt;</msg>
+<msg time="2025-05-30T15:41:03.804014" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x102aae210&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.630275" elapsed="0.001128"/>
+<status status="PASS" start="2025-05-30T15:41:03.803142" elapsed="0.001004"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--incognito</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.631731" elapsed="0.000453"/>
+<status status="PASS" start="2025-05-30T15:41:03.804569" elapsed="0.001137"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-extensions</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.632506" elapsed="0.000386"/>
+<status status="PASS" start="2025-05-30T15:41:03.806444" elapsed="0.000428"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-notifications</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.633200" elapsed="0.000347"/>
+<status status="PASS" start="2025-05-30T15:41:03.807158" elapsed="0.000302"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-popup-blocking</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.633823" elapsed="0.000402"/>
+<status status="PASS" start="2025-05-30T15:41:03.807705" elapsed="0.000288"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--start-maximized</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.634454" elapsed="0.000327"/>
+<status status="PASS" start="2025-05-30T15:41:03.808234" elapsed="0.000287"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-29T21:05:39.635599" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<msg time="2025-05-30T15:41:03.809195" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
 <var>${prefs}</var>
 <arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.635079" elapsed="0.000628"/>
+<status status="PASS" start="2025-05-30T15:41:03.808770" elapsed="0.000504"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
@@ -398,200 +402,202 @@
 <arg>prefs</arg>
 <arg>${prefs}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.636062" elapsed="0.000655"/>
+<status status="PASS" start="2025-05-30T15:41:03.809537" elapsed="0.000355"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:39.637814" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<msg time="2025-05-30T15:41:03.814059" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-29T21:05:39.637077" elapsed="3.190003"/>
+<status status="PASS" start="2025-05-30T15:41:03.810209" elapsed="2.960152"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-29T21:05:42.827893" elapsed="0.004493"/>
+<status status="PASS" start="2025-05-30T15:41:06.771336" elapsed="0.005397"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-29T21:05:42.832635" elapsed="0.001655"/>
+<status status="PASS" start="2025-05-30T15:41:06.777012" elapsed="0.003347"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:39.629575" elapsed="3.204917"/>
+<status status="PASS" start="2025-05-30T15:41:03.801860" elapsed="2.978718"/>
 </kw>
 <kw name="fill the login form" owner="LoginResources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:42.836621" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<msg time="2025-05-30T15:41:06.782330" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
 <arg>${user}</arg>
 <arg>${Username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:42.835951" elapsed="0.641612"/>
+<status status="PASS" start="2025-05-30T15:41:06.781950" elapsed="1.118674"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:43.478424" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
-<msg time="2025-05-29T21:05:43.523856" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-05-30T15:41:07.901712" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-30T15:41:07.979709" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${pass}</arg>
 <arg>${Password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:43.477988" elapsed="0.151993"/>
+<status status="PASS" start="2025-05-30T15:41:07.901130" elapsed="0.285209"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:43.630836" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<msg time="2025-05-30T15:41:08.187064" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
 <arg>${login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:43.630436" elapsed="0.210057"/>
+<status status="PASS" start="2025-05-30T15:41:08.186611" elapsed="0.165806"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-29T21:05:48.843211" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-05-30T15:41:13.354893" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-29T21:05:43.841002" elapsed="5.002475"/>
+<status status="PASS" start="2025-05-30T15:41:08.352701" elapsed="5.003120"/>
 </kw>
 <arg>${username}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-29T21:05:42.835300" elapsed="6.008417"/>
+<status status="PASS" start="2025-05-30T15:41:06.781300" elapsed="6.575443"/>
 </kw>
 <kw name="Click on the Menu Button and Click on Bussiness" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:48.845897" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
+<msg time="2025-05-30T15:41:13.359366" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
 <arg>${menu_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:48.845163" elapsed="0.106581"/>
+<status status="PASS" start="2025-05-30T15:41:13.358780" elapsed="0.236568"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:48.952262" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
+<msg time="2025-05-30T15:41:13.596142" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
 <arg>${bussiness}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:48.951982" elapsed="0.316756"/>
+<status status="PASS" start="2025-05-30T15:41:13.595628" elapsed="0.163318"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:48.844366" elapsed="0.424510"/>
+<status status="PASS" start="2025-05-30T15:41:13.357861" elapsed="0.401280"/>
 </kw>
 <kw name="Click on Learning Journey from Bussiness" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:49.269918" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']'.</msg>
+<msg time="2025-05-30T15:41:13.760275" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']'.</msg>
 <arg>${learning_journey}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:49.269675" elapsed="0.329929"/>
+<status status="PASS" start="2025-05-30T15:41:13.759953" elapsed="0.721256"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:49.269310" elapsed="0.330612"/>
+<status status="PASS" start="2025-05-30T15:41:13.759589" elapsed="0.721826"/>
 </kw>
 <kw name="Click on Search box and Insert Value as hirefromus" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:49.601613" level="INFO">Clicking element '//input[@placeholder="Search Learning Journeys..."]'.</msg>
+<msg time="2025-05-30T15:41:14.482923" level="INFO">Clicking element '//input[@placeholder="Search Learning Journeys..."]'.</msg>
 <arg>${searchbox_lj}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:49.601051" elapsed="1.002844"/>
+<status status="PASS" start="2025-05-30T15:41:14.482464" elapsed="0.545541"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:50.605366" level="INFO">Typing text 'hirefromus' into text field '//input[@placeholder="Search Learning Journeys..."]'.</msg>
+<msg time="2025-05-30T15:41:15.028481" level="INFO">Typing text 'hirefromus' into text field '//input[@placeholder="Search Learning Journeys..."]'.</msg>
 <arg>${searchbox_lj}</arg>
 <arg>hirefromus</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:50.604992" elapsed="0.375791"/>
+<status status="PASS" start="2025-05-30T15:41:15.028222" elapsed="0.374298"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${searchbox_lj}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-29T21:05:50.981419" elapsed="0.037249"/>
+<status status="PASS" start="2025-05-30T15:41:15.402810" elapsed="0.022660"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:49.600475" elapsed="1.418398"/>
+<status status="PASS" start="2025-05-30T15:41:14.481870" elapsed="0.943733"/>
 </kw>
 <kw name="Asserting the hirefromus in the Tablular Display" owner="LearningJourneyResources">
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:51.042269" level="INFO">Current page contains element '//td[text()='hirefromus']'.</msg>
+<msg time="2025-05-30T15:41:15.440462" level="INFO">Current page contains element '//td[text()='hirefromus']'.</msg>
 <arg>//td[text()='hirefromus']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-05-29T21:05:51.020052" elapsed="0.022379"/>
+<status status="PASS" start="2025-05-30T15:41:15.426276" elapsed="0.014303"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:51.019481" elapsed="0.023078"/>
+<status status="PASS" start="2025-05-30T15:41:15.425906" elapsed="0.014789"/>
 </kw>
 <kw name="Edititng the hirefromus into trainfromus" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:51.044496" level="INFO">Clicking element '(//table//tr[1]//td[4]//div//button)[1]'.</msg>
+<msg time="2025-05-30T15:41:15.441598" level="INFO">Clicking element '(//table//tr[1]//td[4]//div//button)[1]'.</msg>
 <arg>${edit}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:51.044096" elapsed="0.191694"/>
+<status status="PASS" start="2025-05-30T15:41:15.441377" elapsed="0.110005"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:51.236487" level="INFO">Clicking element '//div[@role="combobox"]'.</msg>
+<msg time="2025-05-30T15:41:15.552062" level="INFO">Clicking element '//div[@role="combobox"]'.</msg>
 <arg>${type}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:51.236157" elapsed="0.592093"/>
+<status status="PASS" start="2025-05-30T15:41:15.551781" elapsed="0.581273"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:51.829113" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding MuiMenu-list css-r8u8y9"]/li[2]'.</msg>
+<msg time="2025-05-30T15:41:16.133567" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding MuiMenu-list css-r8u8y9"]/li[2]'.</msg>
 <arg>${train}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:51.828606" elapsed="0.199181"/>
+<status status="PASS" start="2025-05-30T15:41:16.133287" elapsed="0.138977"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:52.028645" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<msg time="2025-05-30T15:41:16.273596" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
 <arg>${submit_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.028190" elapsed="0.230179"/>
+<status status="PASS" start="2025-05-30T15:41:16.272542" elapsed="0.270673"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:51.043267" elapsed="1.215389"/>
+<status status="PASS" start="2025-05-30T15:41:15.441032" elapsed="1.102317"/>
 </kw>
 <kw name="close the browser session" owner="GenericResources" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.260065" elapsed="0.345405"/>
+<status status="PASS" start="2025-05-30T15:41:16.544137" elapsed="0.207051"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:52.259549" elapsed="0.346157"/>
+<status status="PASS" start="2025-05-30T15:41:16.543784" elapsed="0.207671"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:39.628887" elapsed="12.977029"/>
+<tag>edit</tag>
+<tag>regression</tag>
+<status status="PASS" start="2025-05-30T15:41:03.800644" elapsed="12.951065"/>
 </test>
-<test id="s1-t4" name="Asserting the trainfromus is changed or not" line="36">
+<test id="s1-t4" name="Asserting the trainfromus is changed or not" line="46">
 <kw name="Open the browser with url" owner="GenericResources" type="SETUP">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-29T21:05:52.608415" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1044936f0&gt;</msg>
+<msg time="2025-05-30T15:41:16.759127" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x102f33490&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.607959" elapsed="0.000513"/>
+<status status="PASS" start="2025-05-30T15:41:16.757371" elapsed="0.001888"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--incognito</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.608676" elapsed="0.000250"/>
+<status status="PASS" start="2025-05-30T15:41:16.759613" elapsed="0.000283"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-extensions</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.609113" elapsed="0.000228"/>
+<status status="PASS" start="2025-05-30T15:41:16.760076" elapsed="0.000215"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-notifications</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.609607" elapsed="0.000262"/>
+<status status="PASS" start="2025-05-30T15:41:16.760465" elapsed="0.000228"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-popup-blocking</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.610042" elapsed="0.000208"/>
+<status status="PASS" start="2025-05-30T15:41:16.760871" elapsed="0.000214"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--start-maximized</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.610419" elapsed="0.000193"/>
+<status status="PASS" start="2025-05-30T15:41:16.761249" elapsed="0.000207"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-29T21:05:52.611421" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<msg time="2025-05-30T15:41:16.761945" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
 <var>${prefs}</var>
 <arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.610791" elapsed="0.000784"/>
+<status status="PASS" start="2025-05-30T15:41:16.761638" elapsed="0.000359"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
@@ -599,209 +605,211 @@
 <arg>prefs</arg>
 <arg>${prefs}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.611797" elapsed="0.000292"/>
+<status status="PASS" start="2025-05-30T15:41:16.762166" elapsed="0.000234"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:52.612935" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<msg time="2025-05-30T15:41:16.762973" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-29T21:05:52.612335" elapsed="2.866820"/>
+<status status="PASS" start="2025-05-30T15:41:16.762598" elapsed="4.120737"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-29T21:05:55.479898" elapsed="0.004294"/>
+<status status="PASS" start="2025-05-30T15:41:20.883886" elapsed="0.005596"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-29T21:05:55.484428" elapsed="0.001467"/>
+<status status="PASS" start="2025-05-30T15:41:20.889859" elapsed="0.001655"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:52.607583" elapsed="2.878503"/>
+<status status="PASS" start="2025-05-30T15:41:16.755589" elapsed="4.136111"/>
 </kw>
 <kw name="fill the login form" owner="LoginResources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:55.487528" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<msg time="2025-05-30T15:41:20.893397" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
 <arg>${user}</arg>
 <arg>${Username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:55.487181" elapsed="0.658601"/>
+<status status="PASS" start="2025-05-30T15:41:20.892807" elapsed="0.574961"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:56.146760" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
-<msg time="2025-05-29T21:05:56.210696" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-05-30T15:41:21.468398" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-30T15:41:21.513682" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${pass}</arg>
 <arg>${Password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:56.146044" elapsed="0.299910"/>
+<status status="PASS" start="2025-05-30T15:41:21.468014" elapsed="0.148544"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:05:56.447041" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<msg time="2025-05-30T15:41:21.617461" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
 <arg>${login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:05:56.446500" elapsed="0.216394"/>
+<status status="PASS" start="2025-05-30T15:41:21.616927" elapsed="0.204225"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-29T21:06:01.664197" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-05-30T15:41:26.821808" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-29T21:05:56.663140" elapsed="5.001321"/>
+<status status="PASS" start="2025-05-30T15:41:21.821409" elapsed="5.000657"/>
 </kw>
 <arg>${username}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-29T21:05:55.486605" elapsed="6.178109"/>
+<status status="PASS" start="2025-05-30T15:41:20.892228" elapsed="5.930083"/>
 </kw>
 <kw name="Click on the Menu Button and Click on Bussiness" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:01.667330" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
+<msg time="2025-05-30T15:41:26.824116" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
 <arg>${menu_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:01.666757" elapsed="0.130978"/>
+<status status="PASS" start="2025-05-30T15:41:26.823629" elapsed="3.537386"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:01.798730" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
+<msg time="2025-05-30T15:41:30.362033" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
 <arg>${bussiness}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:01.798155" elapsed="0.336406"/>
+<status status="PASS" start="2025-05-30T15:41:30.361391" elapsed="0.330841"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:01.665381" elapsed="0.469398"/>
+<status status="PASS" start="2025-05-30T15:41:26.822941" elapsed="3.869519"/>
 </kw>
 <kw name="Click on Learning Journey from Bussiness" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:02.136123" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']'.</msg>
+<msg time="2025-05-30T15:41:30.694090" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']'.</msg>
 <arg>${learning_journey}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:02.135839" elapsed="0.319717"/>
+<status status="PASS" start="2025-05-30T15:41:30.693460" elapsed="0.495516"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:02.135410" elapsed="0.320359"/>
+<status status="PASS" start="2025-05-30T15:41:30.692923" elapsed="0.496305"/>
 </kw>
 <kw name="Click on Search box and Insert Value as hirefromus" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:02.458137" level="INFO">Clicking element '//input[@placeholder="Search Learning Journeys..."]'.</msg>
+<msg time="2025-05-30T15:41:31.191596" level="INFO">Clicking element '//input[@placeholder="Search Learning Journeys..."]'.</msg>
 <arg>${searchbox_lj}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:02.457781" elapsed="0.531669"/>
+<status status="PASS" start="2025-05-30T15:41:31.190920" elapsed="0.516140"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:02.990562" level="INFO">Typing text 'hirefromus' into text field '//input[@placeholder="Search Learning Journeys..."]'.</msg>
+<msg time="2025-05-30T15:41:31.708771" level="INFO">Typing text 'hirefromus' into text field '//input[@placeholder="Search Learning Journeys..."]'.</msg>
 <arg>${searchbox_lj}</arg>
 <arg>hirefromus</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:02.989979" elapsed="0.351672"/>
+<status status="PASS" start="2025-05-30T15:41:31.707754" elapsed="0.309098"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${searchbox_lj}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-29T21:06:03.342013" elapsed="0.028015"/>
+<status status="PASS" start="2025-05-30T15:41:32.017119" elapsed="0.024301"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:02.456868" elapsed="0.913353"/>
+<status status="PASS" start="2025-05-30T15:41:31.189827" elapsed="0.851778"/>
 </kw>
 <kw name="Asserting the hirefromus in the Tablular Display" owner="LearningJourneyResources">
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:03.385464" level="INFO">Current page contains element '//td[text()='hirefromus']'.</msg>
+<msg time="2025-05-30T15:41:32.058895" level="INFO">Current page contains element '//td[text()='hirefromus']'.</msg>
 <arg>//td[text()='hirefromus']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-05-29T21:06:03.371243" elapsed="0.014339"/>
+<status status="PASS" start="2025-05-30T15:41:32.043689" elapsed="0.015344"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:03.370642" elapsed="0.015064"/>
+<status status="PASS" start="2025-05-30T15:41:32.042353" elapsed="0.016833"/>
 </kw>
 <kw name="Edititng the hirefromus into trainfromus" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:03.386721" level="INFO">Clicking element '(//table//tr[1]//td[4]//div//button)[1]'.</msg>
+<msg time="2025-05-30T15:41:32.060514" level="INFO">Clicking element '(//table//tr[1]//td[4]//div//button)[1]'.</msg>
 <arg>${edit}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:03.386471" elapsed="0.106768"/>
+<status status="PASS" start="2025-05-30T15:41:32.060200" elapsed="0.116832"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:03.494180" level="INFO">Clicking element '//div[@role="combobox"]'.</msg>
+<msg time="2025-05-30T15:41:32.178039" level="INFO">Clicking element '//div[@role="combobox"]'.</msg>
 <arg>${type}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:03.493692" elapsed="0.543417"/>
+<status status="PASS" start="2025-05-30T15:41:32.177463" elapsed="0.659055"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:04.038092" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding MuiMenu-list css-r8u8y9"]/li[2]'.</msg>
+<msg time="2025-05-30T15:41:32.837147" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding MuiMenu-list css-r8u8y9"]/li[2]'.</msg>
 <arg>${train}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:04.037529" elapsed="0.155365"/>
+<status status="PASS" start="2025-05-30T15:41:32.836858" elapsed="0.152602"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:04.193513" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<msg time="2025-05-30T15:41:32.990555" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
 <arg>${submit_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:04.193113" elapsed="0.275607"/>
+<status status="PASS" start="2025-05-30T15:41:32.989792" elapsed="0.267340"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:03.386107" elapsed="1.082774"/>
+<status status="PASS" start="2025-05-30T15:41:32.059765" elapsed="1.197562"/>
 </kw>
 <kw name="Assert the trainfromus in the Tablular Display" owner="LearningJourneyResources">
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:06.675188" level="INFO">Current page contains element '//td[text()='trainfromus']'.</msg>
+<msg time="2025-05-30T15:41:35.901271" level="INFO">Current page contains element '//td[text()='trainfromus']'.</msg>
 <arg>//td[text()='trainfromus']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-05-29T21:06:04.469812" elapsed="2.205507"/>
+<status status="PASS" start="2025-05-30T15:41:33.259878" elapsed="2.641601"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:04.469369" elapsed="2.206075"/>
+<status status="PASS" start="2025-05-30T15:41:33.259085" elapsed="2.642572"/>
 </kw>
 <kw name="close the browser session" owner="GenericResources" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-29T21:06:06.676189" elapsed="0.345078"/>
+<status status="PASS" start="2025-05-30T15:41:35.902615" elapsed="0.182648"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:06.675841" elapsed="0.345974"/>
+<status status="PASS" start="2025-05-30T15:41:35.902234" elapsed="0.183245"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:05:52.606915" elapsed="14.415365"/>
+<tag>regression</tag>
+<tag>verification</tag>
+<status status="PASS" start="2025-05-30T15:41:16.752747" elapsed="19.333021"/>
 </test>
-<test id="s1-t5" name="Deleting element from Learning Journey" line="46">
+<test id="s1-t5" name="Deleting element from Learning Journey" line="59">
 <kw name="Open the browser with url" owner="GenericResources" type="SETUP">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-29T21:06:07.027637" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1044936f0&gt;</msg>
+<msg time="2025-05-30T15:41:36.088991" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x102f33490&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-29T21:06:07.025902" elapsed="0.001804"/>
+<status status="PASS" start="2025-05-30T15:41:36.087268" elapsed="0.001845"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--incognito</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:06:07.027929" elapsed="0.000249"/>
+<status status="PASS" start="2025-05-30T15:41:36.089616" elapsed="0.001146"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-extensions</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:06:07.028362" elapsed="0.000210"/>
+<status status="PASS" start="2025-05-30T15:41:36.091327" elapsed="0.000790"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-notifications</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:06:07.030075" elapsed="0.000847"/>
+<status status="PASS" start="2025-05-30T15:41:36.092637" elapsed="0.000278"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-popup-blocking</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:06:07.031770" elapsed="0.000661"/>
+<status status="PASS" start="2025-05-30T15:41:36.093145" elapsed="0.000342"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--start-maximized</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:06:07.033116" elapsed="0.000433"/>
+<status status="PASS" start="2025-05-30T15:41:36.093787" elapsed="0.000372"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-29T21:06:07.035152" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<msg time="2025-05-30T15:41:36.095055" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
 <var>${prefs}</var>
 <arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-29T21:06:07.034579" elapsed="0.000652"/>
+<status status="PASS" start="2025-05-30T15:41:36.094466" elapsed="0.000740"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
@@ -809,173 +817,183 @@
 <arg>prefs</arg>
 <arg>${prefs}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-29T21:06:07.035506" elapsed="0.000343"/>
+<status status="PASS" start="2025-05-30T15:41:36.095523" elapsed="0.000471"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:07.036633" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<msg time="2025-05-30T15:41:36.097318" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-29T21:06:07.036131" elapsed="3.067012"/>
+<status status="PASS" start="2025-05-30T15:41:36.096454" elapsed="3.980727"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-29T21:06:10.103944" elapsed="0.044862"/>
+<status status="PASS" start="2025-05-30T15:41:40.077758" elapsed="0.003314"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-29T21:06:10.149066" elapsed="0.001900"/>
+<status status="PASS" start="2025-05-30T15:41:40.081306" elapsed="0.002763"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:07.025468" elapsed="3.125688"/>
+<status status="PASS" start="2025-05-30T15:41:36.086885" elapsed="3.997386"/>
 </kw>
 <kw name="fill the login form" owner="LoginResources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:10.152605" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<msg time="2025-05-30T15:41:40.085794" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
 <arg>${user}</arg>
 <arg>${Username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:10.152252" elapsed="0.605164"/>
+<status status="PASS" start="2025-05-30T15:41:40.085445" elapsed="0.587018"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:10.757969" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
-<msg time="2025-05-29T21:06:10.802363" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-05-30T15:41:40.673249" level="INFO">Typing password into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='password']'.</msg>
+<msg time="2025-05-30T15:41:40.720083" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${pass}</arg>
 <arg>${Password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:10.757660" elapsed="0.148575"/>
+<status status="PASS" start="2025-05-30T15:41:40.672710" elapsed="0.147033"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:10.910438" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<msg time="2025-05-30T15:41:40.820443" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
 <arg>${login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:10.909818" elapsed="0.239456"/>
+<status status="PASS" start="2025-05-30T15:41:40.820001" elapsed="0.230986"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-29T21:06:16.151158" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-05-30T15:41:46.051785" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-29T21:06:11.150433" elapsed="5.000985"/>
+<status status="PASS" start="2025-05-30T15:41:41.051339" elapsed="5.000683"/>
 </kw>
 <arg>${username}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-29T21:06:10.151666" elapsed="5.999997"/>
+<status status="PASS" start="2025-05-30T15:41:40.084830" elapsed="5.967436"/>
 </kw>
 <kw name="Click on the Menu Button and Click on Bussiness" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:16.153472" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
+<msg time="2025-05-30T15:41:46.054340" level="INFO">Clicking element '//button[@aria-label="open drawer"]'.</msg>
 <arg>${menu_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:16.152990" elapsed="0.109539"/>
+<status status="PASS" start="2025-05-30T15:41:46.053846" elapsed="0.111615"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:16.263015" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
+<msg time="2025-05-30T15:41:46.166750" level="INFO">Clicking element '//ul[@class="MuiList-root MuiList-padding css-1ontqvh"]/li[6]'.</msg>
 <arg>${bussiness}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:16.262749" elapsed="0.253216"/>
+<status status="PASS" start="2025-05-30T15:41:46.165714" elapsed="0.267862"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:16.152320" elapsed="0.363834"/>
+<status status="PASS" start="2025-05-30T15:41:46.053122" elapsed="0.380692"/>
 </kw>
 <kw name="Click on Learning Journey from Bussiness" owner="LearningJourneyResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:16.517460" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']'.</msg>
+<msg time="2025-05-30T15:41:46.435348" level="INFO">Clicking element '//div[@class="MuiListItemText-root css-1tsvksn"]/span[text()='Learning Journey']'.</msg>
 <arg>${learning_journey}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:16.517166" elapsed="0.293673"/>
+<status status="PASS" start="2025-05-30T15:41:46.434867" elapsed="0.362725"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:16.516533" elapsed="0.294449"/>
+<status status="PASS" start="2025-05-30T15:41:46.434316" elapsed="0.363435"/>
 </kw>
 <kw name="Asserting the hirefromus in the Tablular Display" owner="LearningJourneyResources">
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:17.295494" level="INFO">Current page contains element '//td[text()='hirefromus']'.</msg>
+<msg time="2025-05-30T15:41:47.242000" level="INFO">Current page contains element '//td[text()='hirefromus']'.</msg>
 <arg>//td[text()='hirefromus']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-05-29T21:06:16.811860" elapsed="0.483764"/>
+<status status="PASS" start="2025-05-30T15:41:46.798498" elapsed="0.443673"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:16.811470" elapsed="0.484289"/>
+<status status="PASS" start="2025-05-30T15:41:46.798093" elapsed="0.444266"/>
 </kw>
 <kw name="Deleting an element from the Learning Journey Table" owner="LearningJourneyResources">
 <kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:17.309765" level="INFO">@{rows} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="609f0ae91e226e77cc238563b8d3dd72", element="f.D57A671A17820FD7543AAE8E8C149499.d.385482B61DCBC796D68F6BBABCBAA8FE.e.79")&gt; | &lt;selenium.webdr...</msg>
+<msg time="2025-05-30T15:41:47.264068" level="INFO">@{rows} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="85f6fcdcfb81773b43a621b9772a68f6", element="f.11DC3D8B034F09BCA72984FD187E8F2C.d.19597CA9C17C3E350A72CF89AD8A94F3.e.79")&gt; | &lt;selenium.webdr...</msg>
 <var>@{rows}</var>
 <arg>xpath=//tbody[@class="MuiTableBody-root css-1xnox0e"]/tr/td[1]</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:17.296468" elapsed="0.013358"/>
+<status status="PASS" start="2025-05-30T15:41:47.243561" elapsed="0.020640"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-05-29T21:06:17.310221" level="INFO">Length is 4.</msg>
-<msg time="2025-05-29T21:06:17.310316" level="INFO">${row_count} = 4</msg>
+<msg time="2025-05-30T15:41:47.264790" level="INFO">Length is 3.</msg>
+<msg time="2025-05-30T15:41:47.264905" level="INFO">${row_count} = 3</msg>
 <var>${row_count}</var>
 <arg>${rows}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-05-29T21:06:17.310031" elapsed="0.000320"/>
+<status status="PASS" start="2025-05-30T15:41:47.264553" elapsed="0.000392"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-05-29T21:06:17.310686" level="INFO">Total number of rows in table: 4</msg>
+<msg time="2025-05-30T15:41:47.266756" level="INFO">Total number of rows in table: 3</msg>
 <arg>Total number of rows in table: ${row_count}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-29T21:06:17.310504" elapsed="0.000246"/>
+<status status="PASS" start="2025-05-30T15:41:47.266219" elapsed="0.000675"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:17.311095" level="INFO">Clicking element '(//table//tr[1]//td[4]//div//button)[2]'.</msg>
+<msg time="2025-05-30T15:41:47.268173" level="INFO">Clicking element '(//table//tr[1]//td[4]//div//button)[2]'.</msg>
 <arg>${delete}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:17.310893" elapsed="0.135589"/>
+<status status="PASS" start="2025-05-30T15:41:47.267399" elapsed="0.148904"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:17.447548" level="INFO">Clicking element '//div[@class="MuiDialogActions-root MuiDialogActions-spacing css-1vskg8q"]/button[2]'.</msg>
+<msg time="2025-05-30T15:41:47.418192" level="INFO">Clicking element '//div[@class="MuiDialogActions-root MuiDialogActions-spacing css-1vskg8q"]/button[2]'.</msg>
 <arg>${delete2}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:17.447072" elapsed="0.103427"/>
+<status status="PASS" start="2025-05-30T15:41:47.417876" elapsed="0.103287"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-29T21:06:22.553565" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-05-30T15:41:52.523489" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-29T21:06:17.551042" elapsed="5.002767"/>
+<status status="PASS" start="2025-05-30T15:41:47.521462" elapsed="5.002269"/>
 </kw>
 <kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2025-05-29T21:06:22.569700" level="INFO">@{titles} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="609f0ae91e226e77cc238563b8d3dd72", element="f.D57A671A17820FD7543AAE8E8C149499.d.385482B61DCBC796D68F6BBABCBAA8FE.e.78")&gt; | &lt;selenium.webdr...</msg>
+<msg time="2025-05-30T15:41:52.540150" level="INFO">@{titles} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="85f6fcdcfb81773b43a621b9772a68f6", element="f.11DC3D8B034F09BCA72984FD187E8F2C.d.19597CA9C17C3E350A72CF89AD8A94F3.e.80")&gt; | &lt;selenium.webdr...</msg>
 <var>@{titles}</var>
 <arg>xpath=//tbody[@class="MuiTableBody-root css-1xnox0e"]/tr/td[1]</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2025-05-29T21:06:22.554192" elapsed="0.015635"/>
+<status status="PASS" start="2025-05-30T15:41:52.524155" elapsed="0.016120"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-05-29T21:06:22.570580" level="INFO">Length is 3.</msg>
-<msg time="2025-05-29T21:06:22.570927" level="INFO">${title_count} = 3</msg>
+<msg time="2025-05-30T15:41:52.541053" level="INFO">Length is 2.</msg>
+<msg time="2025-05-30T15:41:52.541230" level="INFO">${title_count} = 2</msg>
 <var>${title_count}</var>
 <arg>${titles}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-05-29T21:06:22.570202" elapsed="0.000806"/>
+<status status="PASS" start="2025-05-30T15:41:52.540670" elapsed="0.000624"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${title_count} &gt;= ${row_count}</arg>
 <arg>Fail</arg>
 <arg>Title count (${title_count}) exceeds row count (${row_count})</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-05-29T21:06:22.571425" elapsed="0.000662"/>
+<status status="PASS" start="2025-05-30T15:41:52.541639" elapsed="0.000580"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:17.296115" elapsed="5.276206"/>
+<status status="PASS" start="2025-05-30T15:41:47.242876" elapsed="5.299542"/>
 </kw>
 <kw name="close the browser session" owner="GenericResources" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-29T21:06:22.573779" elapsed="0.269780"/>
+<status status="PASS" start="2025-05-30T15:41:52.543552" elapsed="0.171365"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:22.573117" elapsed="0.270674"/>
+<status status="PASS" start="2025-05-30T15:41:52.542981" elapsed="0.172152"/>
 </kw>
-<status status="PASS" start="2025-05-29T21:06:07.024533" elapsed="15.819512"/>
+<tag>critical</tag>
+<tag>delete</tag>
+<tag>regression</tag>
+<status status="PASS" start="2025-05-30T15:41:36.086248" elapsed="16.629081"/>
 </test>
 <doc>Learning Journey Test Cases for Smartcliff Admin Website to Edit and Delete</doc>
-<status status="PASS" start="2025-05-29T21:05:15.871803" elapsed="66.973972"/>
+<status status="PASS" start="2025-05-30T15:40:39.678643" elapsed="73.037979"/>
 </suite>
 <statistics>
 <total>
 <stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">critical</stat>
+<stat pass="1" fail="0" skip="0">delete</stat>
+<stat pass="1" fail="0" skip="0">edit</stat>
+<stat pass="5" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">sanity</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+<stat pass="1" fail="0" skip="0">verification</stat>
 </tag>
 <suite>
 <stat name="LearningJourney2" id="s1" pass="5" fail="0" skip="0">LearningJourney2</stat>
