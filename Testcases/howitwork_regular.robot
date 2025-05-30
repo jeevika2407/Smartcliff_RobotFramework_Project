@@ -72,4 +72,3 @@ Delete How It Work
     HowItWorkResources.User visit the How It Work page By clicking icon
     HowItWorkResources.delete How It Work
     GenericResources.close the browser session
-

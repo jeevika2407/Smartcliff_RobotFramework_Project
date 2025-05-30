@@ -12,12 +12,14 @@ Test Teardown       Close the browser session
 
 *** Test Cases ***
 
+# Test case to run data-driven Current Availability entries using values from Excel
 Current Availability Entry Test
     [Tags]    current_availability      regression
     Validate Current Availability Data Entry
 
 *** Keywords ***
 
+# Keyword to validate data entry for Current Availability form using provided input values
 Validate Current Availability Data Entry
     [Arguments]    ${skill}    ${resources}    ${duration}    ${batch}    ${exp}    ${remarks}    ${type}
     ${username}=    Set Variable    smart@gmail.com
