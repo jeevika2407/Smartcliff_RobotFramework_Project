@@ -45,7 +45,7 @@ Click the Business option in the menu.
     Click Element    ${business}
 Click the Client option under Business.
     Click Element    ${client}
-To Verify that the "Client" page.
+To Verify that the "Client" page opens sucessfully.
     Location Should Be    ${client-url}
 
 Click the Add New Client button.
