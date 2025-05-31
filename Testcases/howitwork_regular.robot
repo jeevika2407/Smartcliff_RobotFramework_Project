@@ -3,6 +3,7 @@ Library    SeleniumLibrary
 Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Resource   ../Resources/HowItWorkResources.robot
+Resource   ../Resources/CareerResources.robot
 
 *** Variables ***
 ${Username}    smart@gmail.com
@@ -30,6 +31,15 @@ Edit How It Work
 Delete How It Work Entry
     [Tags]    regression    howitworkdelete
     Delete How It Work
+Validate Rows Per Page Dropdown
+    [Tags]    regression    howitworkrowsperpage
+    Validate Rows Per Page Dropdown
+User will visit the Career Page By clicking Back which is in the Add New Career Page
+    [Tags]    regression    howitworkbackbutton
+    User will visit the Career Page By clicking Back which is in the Add New Career Page    
+Delete Cancle How It Work Entry
+    [Tags]    regression    howitworkdeletecancel
+    Delete Cancle How It Work Entry
 
 *** Keywords ***
 Working with How It Work Page By clicking on the three lines icon
@@ -71,4 +81,23 @@ Delete How It Work
     LoginResources.fill the login form    ${Username}    ${Password}
     HowItWorkResources.User visit the How It Work page By clicking icon
     HowItWorkResources.delete How It Work
+    GenericResources.close the browser session
+Delete Cancle How It Work Entry
+    GenericResources.Open the browser with url
+    LoginResources.fill the login form    ${Username}    ${Password}
+    HowItWorkResources.User visit the How It Work page By clicking icon
+    HowItWorkResources.delete Cancel Button
+    GenericResources.close the browser session
+
+Validate Rows Per Page Dropdown
+    GenericResources.Open the browser with url
+    LoginResources.fill the login form    ${Username}    ${Password}
+    HowItWorkResources.User visit the How It Work page By clicking icon
+    HowItWorkResources.Validate Rows Per Page Dropdown
+    GenericResources.close the browser session
+User will visit the Career Page By clicking Back which is in the Add New Career Page
+    GenericResources.Open the browser with url
+    LoginResources.fill the login form    ${Username}    ${Password}
+    HowItWorkResources.User visit the How It Work page By clicking icon
+    CareerResources.User will visit the Career Page By clicking Back which is in the Add New Career Page
     GenericResources.close the browser session
