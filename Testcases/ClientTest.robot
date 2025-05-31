@@ -62,7 +62,7 @@ Verify that the "Client" page loads successfully
     Click the menu button to open the sidebar.
     Click the Business option in the menu.
     Click the Client option under Business.
-    To Verify that the "Client" page.
+    To Verify that the "Client" page opens sucessfully.
  
 Verify that a new client can be added.
     Open the browser with url
@@ -143,8 +143,7 @@ Verify that the "Client" page loads successfully By clicking icons
     fill the login form    smart@gmail.com    1234
     Click the Business option in the menu.
     Click the Client icon under Business.
-    To Verify that the "Client" page.
-
+    To Verify that the "Client" page opens sucessfully.
 
 Verify that an invalid-name error message is disaplayed in the client name field
     Open the browser with url

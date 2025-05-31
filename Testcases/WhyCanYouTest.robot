@@ -32,6 +32,9 @@ Search Title By Name
 Edit by changing the title
     [Tags]    reg    edit
     verify Update Client Details After Editing
+Delete item and checking with count
+    [Tags]    smoke    delete
+    Verify Delete Works By Checking Count
     
 *** Keywords ***
 Home Page Verify
@@ -100,6 +103,24 @@ verify Update Client Details After Editing
     Change the name of the title
     Enter the update button
     Verify that the modified title is listed in the search 
+
+Verify Delete Works By Checking Count
+    Open The Browser With URL
+    Fill The Login Form    ${email}    ${pwd}
+    Click The Menu Bar
+    Click Option Under Menu Bar
+    Add A New Hire
+    Fill The New Hire Form2
+    Click On The Add Definition
+    Fill The Add Definition Form
+    Click On Create
+    Search The Item
+    Click On The Delete Icon
+    Click On Confirm Delete
+    Verify Item Is Deleted
+
+
+
 
 
 
