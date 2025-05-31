@@ -24,6 +24,11 @@ ${Edit_button}    xpath = (//*[@class="MuiBox-root css-1i27l4i"]//button[1])[las
 ${Edit_checl}   xpath = (//*[@class="MuiTableBody-root css-1xnox0e"]//child::td[1]//p)[last()]
 ${update_button}    xpath = (//*[@style="border: 2px dotted rgb(211, 211, 211); padding: 20px; border-radius: 8px;"]//child::button)[2]
 ${title1}   xpath = (//*[@style="border: 2px dotted rgb(211, 211, 211); padding: 20px; border-radius: 8px;"]//child::div[1]//input)[1]
+${drop_down}    xpath = //*[@class="MuiSelect-select MuiTablePagination-select MuiSelect-standard MuiInputBase-input css-1cccqvr"]
+${drop_down_5}    xpath = (//*[@class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters MuiTablePagination-menuItem css-1gs62wq"])[1]
+${num_of_stacks}    xpath = //*[@class="MuiTableBody-root css-1xnox0e"]//tr
+${Cancle_button}    xpath = //button[@class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-n81xtf"]
+
 *** Keywords ***
 User visit the How It Work page By clicking on the three lines icon
     Click Element    ${threelines}
@@ -85,14 +90,20 @@ Search How It Work with Invalid Data
     Sleep    2s
     Page Should Contain Element    ${wrong_search_element}
 
-delete How It Work
-    ${row_count}=    Get Element Count    ${count}
+Delete How It Work
+    ${before_text}=    Get Text    //*[@class="MuiTablePagination-displayedRows css-1chpzqh"]
     Click Element    ${delete_icon}
     Click Element    ${delete_button}
-    sleep    2s
-    ${row_count1}=    Get Element Count    ${count}    
-    Should Not Be Equal    ${row_count}    ${row_count1}
-
+    Sleep    2s
+    ${after_text}=    Get Text    //*[@class="MuiTablePagination-displayedRows css-1chpzqh"]
+    Should Not Be Equal    ${before_text}    ${after_text}
+Delete Cancel Button 
+    ${initial_url}=    Get Location
+    ${before_text}=    Get Text    //*[@class="MuiTablePagination-displayedRows css-1chpzqh"]
+    Click Element    ${delete_icon}
+    Click Element    ${Cancle_button}
+    ${current_url}=    Get Location
+    Should Be Equal    ${initial_url}    ${current_url}
 Edit How It Work
     [Arguments]    ${Titless}
     Click Element    ${Edit_button}
@@ -104,3 +115,9 @@ Edit How It Work
     Wait Until Element Is Visible    ${count}    timeout=10s
     ${Edit_element_locator}=    Get Text    ${Edit_checl}
     Should Be Equal    ${Titless}    ${Edit_element_locator}
+
+Validate Rows Per Page Dropdown
+    Click Element    ${drop_down}
+    Click Element    ${drop_down_5}
+    ${actual_count}=    Get Element Count    ${num_of_stacks}
+    Should Be True    ${actual_count} <= 5

@@ -25,6 +25,8 @@ ${link}    xpath = (//*[@class="MuiInputBase-input MuiOutlinedInput-input css-1x
 ${search_Box1}    xpath = //*[@class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedStart css-162edyi"]
 ${search_element1}    xpath = //*[@class="MuiTypography-root MuiTypography-body1 css-9l3uo3"]
 ${table_value1}    xpath = //*[@class="MuiTableBody-root css-1xnox0e"]
+${cancle_button1}  xpath = //*[@class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-n81xtf"]
+
 *** Keywords ***
 User visit the Career Page By clicking on the three lines icon
     Click Element    ${threelines}
@@ -90,13 +92,14 @@ Search Career Invalid Data
     Page Should Contain Element    ${search_element1}
 
 delete Career
-    ${row_count}=    Get Element Count    ${count}
+    ${before_text}=    Get Text    //*[@class="MuiTablePagination-displayedRows css-1chpzqh"]
     Click Element    ${delete_icon1}
     Click Element    xpath=//*[@class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedError MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedError MuiButton-sizeMedium MuiButton-containedSizeMedium css-1ecefdc"]
     # Wait Until Element Is Visible    ${count}    timeout=10s
     sleep    2s
-    ${row_count1}=    Get Element Count    ${count}    
-    Should Not Be Equal    ${row_count}    ${row_count1}
+    ${after_text}=    Get Text    //*[@class="MuiTablePagination-displayedRows css-1chpzqh"]
+    Should Not Be Equal    ${before_text}    ${after_text}
+
 Edit How It Work
     [Arguments]    ${Titless}
     Click Element    ${Edit_button1}
@@ -108,3 +111,9 @@ Edit How It Work
     Wait Until Element Is Visible    ${count}    timeout=10s
     ${Edit_element_locator}=    Get Text    ${Edit_chec2}
     Should Be Equal    ${Titless}    ${Edit_element_locator}
+Delete Cancel Button
+    ${initial_url}=    Get Location
+    Click Element    ${delete_icon1}
+    Click Element    ${cancle_button1}
+    ${current_url}=    Get Location
+    Should Be Equal    ${initial_url}    ${current_url}
