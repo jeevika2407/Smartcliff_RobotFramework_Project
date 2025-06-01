@@ -1,16 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    Collections
 
 *** Variables ***
-
-
-${url}    https://smart-cliff-admin.vercel.app/
-${browser}    chrome
-
-
+${URL}      https://smart-cliff-admin.vercel.app/
+${BROWSER}  chrome
 
 *** Keywords ***
-Open the browser with url
+Open The Browser With URL
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${options}    add_argument    --incognito
     Call Method    ${options}    add_argument    --disable-extensions
@@ -19,9 +16,8 @@ Open the browser with url
     Call Method    ${options}    add_argument    --start-maximized
     ${prefs}=    Evaluate    {"credentials_enable_service": False, "profile.password_manager_enabled": False}
     Call Method    ${options}    add_experimental_option    prefs    ${prefs}
-    Open Browser    ${url}    ${browser}    options=${options}
-    Maximize Browser Window
+    Open Browser    ${URL}    ${BROWSER}    options=${options}
     Set Selenium Implicit Wait    5
 
-close the browser session
+Close The Browser Session
     Close Browser

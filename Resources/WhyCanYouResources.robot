@@ -24,10 +24,27 @@ ${wcy_icon}    xpath=//*[@id="drawer"]/div/ul/li[6]/div[2]/div/div/div/div[2]
 
 ${edit}    xpath=(//table//tbody//button)[1]
 ${update}    xpath=//div[@class='MuiBox-root css-1vfa8p7']/button
-${updated-name}    robot framework
+${updated-name}    txt robot framework
 
 ${up_tit}    xpath=(//div[@class='MuiCardContent-root css-1qw96cp']/preceding::input)[1]
 ${def-tit}    xpath=((//div[@class='MuiBox-root css-1coeexk']/parent::div/preceding-sibling::div)[2]/child::div)[1]/child::div/child::input
+
+${deleteIcon}    xpath=(//table//tbody//td//button)[2]
+${confirmDelete}    xpath=//div[@class='MuiDialogActions-root MuiDialogActions-spacing css-33pgcr']//button[2]
+${noEntryMSg}    xpath=//*[@id="root"]/div[1]/main/div[2]/div[2]/table/tbody/tr/td
+
+${back}    xpath=//div[@class='MuiBox-root css-1dfbuxp']/descendant::button
+${url}    xpath=https://smart-cliff-admin.vercel.app/business/wcy-hire-control
+
+${filter-type}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']
+${hire-from-us}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li[1]
+${train-from-us}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li[2]
+${institute}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li[3]
+
+
+${tit2}    xpath=(//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/input)[3]
+${textbox2}    xpath=(//div/textarea)[5]
+
 
 *** Keywords ***
 Click The Menu Bar
@@ -53,25 +70,19 @@ Add A New Hire
 
 
 Fill The New Hire Form
-    Input Text    ${title}    txt selenium library
+    Choose File    xpath=(//input[@type='file'])[1]    ${img}
+    Input Text    ${title}    txt
     Click Element    ${type}
     Click Element    ${trainUs}
-    Wait Until Page Contains Element    //input[@type="file"]    timeout=10s
-    Execute JavaScript    document.querySelector("input[type='file']").style.display = 'block'
-    Sleep    2s
-    Choose File    //input[@type="file"]    ${img}
     Sleep    5s
-
+    
 Click On The Add Definition
     Click Button    ${addDef}
 
 Fill The Add Definition Form
+    Choose File    xpath=(//input[@type='file'])[2]    ${icon}
     Input Text    ${tit}    this is description of selenium lib
     Input Text    ${textbox}    complete Robot Framework test file using the SeleniumLibrary
-    Wait Until Page Contains Element    //input[@type="file"]    timeout=10s
-    Execute JavaScript    document.querySelector("input[type='file']").style.display = 'block'
-    Sleep    2s
-    Choose File    //input[@type="file"]    ${icon}
     Sleep    5s
 
 Click On Create
@@ -136,6 +147,104 @@ Verify That The Modified Title Is Listed In The Search
     Page Should Contain    ${updated-name}
 
 
+Fill The New Hire Form2
+    Choose File    xpath=(//input[@type='file'])[1]    ${img}
+    Input Text    ${title}    java
+    Click Element    ${type}
+    Click Element    ${trainUs}
+    Sleep    5s
 
+Search The Item
+    Input Text    ${search-name}    java
 
-      
+Click On The Delete Icon
+    Click Button    ${deleteIcon}
+
+Click On Confirm Delete
+    Click Button    ${confirmDelete}
+    Sleep    5s
+
+Verify Item Is Deleted
+    ${text}=    Get Text    ${noEntryMSg}
+    Should Be Equal    ${text}    No entries found
+
+Click on back button
+    Click Button    ${back}
+    Sleep    5s
+
+Check back button is navigated to previous page
+    ${url1}=    Get Location
+    Log    Navigated URL after first back click: ${url1}
+    Should Contain    ${url1}    wcy-hire-control
+
+# Verify that number of items in the page is same as filter type
+#      [Arguments]    ${Filtertype}
+#     Log To Console    ${Filtertype}
+    
+#     IF    '${Filtertype}' == 'Train From Us'
+#         Wait Until Element Is Visible    ${train-from-us}    timeout=10
+#         Click Element    ${train-from-us}
+#         ${elements}=    Get WebElements    ${filter-type}
+#         ${length}=    Get Length    ${elements}
+#         IF    ${length} == 0
+#             Log To Console    No elements present
+#         ELSE
+#             ${found}=    Set Variable    True
+#             FOR    ${element}    IN    @{elements}
+#             ${text}=    Get Text    ${element}
+#                 IF    '${text}'!='Train From Us'
+#                     ${found}=    Set Variable    False
+#                     BREAK
+#                 END   
+#                 Should Be True    ${found}
+#             END
+#         END
+#     END
+#     IF    '${Filtertype}' == 'Institute'
+#         Wait Until Element Is Visible    ${institute}    timeout=10
+#         Click Element    ${institute}
+#         ${elements}=    Get WebElements    ${filter-type}
+#         ${found}=    Set Variable    True
+#         FOR    ${element}    IN    @{elements}
+#         ${text}=    Get Text    ${element}
+#             IF    '${text}'!='Institute'
+#                 ${found}=    Set Variable    False
+#                 BREAK
+#             END   
+#             Should Be True    ${found}
+#         END
+#     END      
+#     IF    '${Filtertype}' == 'Home'
+#         Wait Until Element Is Visible    ${hire-from-us}    timeout=10
+#         Click Element    ${hire-from-us}
+#         ${elements}=    Get WebElements    ${filter-type}
+#         ${length}=    Get Length    ${elements}
+#         IF    ${length} == 0
+#             Log To Console    No elements present
+#         ELSE
+#             ${found}=    Set Variable    True
+#             FOR    ${element}    IN    @{elements}
+#             ${text}=    Get Text    ${element}
+#                 IF    '${text}'!='Home'
+#                     ${found}=    Set Variable    False
+#                     BREAK
+#                 END   
+#                 Should Be True    ${found}
+#             END
+#         END
+#     END 
+
+Fill The Add Definition Form1
+    Choose File    xpath=(//input[@type='file'])[2]    ${icon}
+    Input Text    ${tit}    this is description of selenium lib
+    Input Text    ${textbox}    complete Robot Framework test file using the SeleniumLibrary
+    Sleep    5s
+
+Again click on add definition
+    Click Button    ${addDef}
+
+Fill The Add Definition Form2
+    Choose File    xpath=(//input[@type='file'])[3]    ${icon}
+    Input Text    ${tit2}    this is description of selenium lib
+    Input Text    ${textbox2}    complete Robot Framework test file using the SeleniumLibrary
+    Sleep    5s

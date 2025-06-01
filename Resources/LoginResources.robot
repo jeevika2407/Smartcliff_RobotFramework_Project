@@ -8,6 +8,9 @@ ${login}    xpath=//button[@id='signin-submit']
 ${erroremail}    xpath=//div/descendant::p[contains(text(),"Email is required")]
 ${errorpwd}      xpath=//div/descendant::p[contains(text(),"Password is required")]
 
+${profile}    xpath=//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-qx3f9p']
+${logout}    xpath=//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiPopover-paper MuiMenu-paper MuiMenu-paper css-1n607ev']/descendant::li[2]
+
 
 *** Keywords ***
 fill the login form
@@ -15,4 +18,5 @@ fill the login form
     Input Text    ${user}    ${Username}
     Input Password    ${pass}    ${Password}
     Click Button    ${login}
-    Sleep    5
+    Sleep    10
+

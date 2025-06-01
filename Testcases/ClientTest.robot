@@ -39,9 +39,9 @@ Access Clear functionality
     Validate 'Clear Filters' Functionality
 Search Client by Name
     [Tags]    smoke    client
-    Verify the search functionality.
+    Verify the search f unctionality.
 Search Client by invalid-Name
-    [Tags]    smoke    client    
+    [Tags]    smoke    client1    
     Verify the search functionality with invalid name.
 Filter by Type
      [Tags]    smoke    client  
@@ -51,7 +51,7 @@ Edit Client Details
     [Tags]    smoke    client
     To verify Update Client Details After Editing
 Delete Client
-    [Tags]    smoke    client    delete  
+    [Tags]    smoke    client1    delete  
     Verify that a client can be deleted.
 
 *** Keywords ***
@@ -62,7 +62,7 @@ Verify that the "Client" page loads successfully
     Click the menu button to open the sidebar.
     Click the Business option in the menu.
     Click the Client option under Business.
-    To Verify that the "Client" page.
+    To Verify that the "Client" page opens sucessfully. 
  
 Verify that a new client can be added.
     Open the browser with url
@@ -143,8 +143,7 @@ Verify that the "Client" page loads successfully By clicking icons
     fill the login form    smart@gmail.com    1234
     Click the Business option in the menu.
     Click the Client icon under Business.
-    To Verify that the "Client" page.
-
+    To Verify that the "Client" page opens sucessfully.
 
 Verify that an invalid-name error message is disaplayed in the client name field
     Open the browser with url
@@ -153,7 +152,7 @@ Verify that an invalid-name error message is disaplayed in the client name field
     Click the Business option in the menu.
     Click the Client option under Business.
     Click the Add New Client button.
-    Enter the invalid name    123abc   
+    Enter the invalid name    123abc    
     Click the Submit button.
     To verify the error message displayed in the name field. 
 

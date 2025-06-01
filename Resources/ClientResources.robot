@@ -38,14 +38,14 @@ ${invalid-name}    abcdefgh
 ${invalid-search-name-ver}    xpath=//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-1a4b21o']/child::p
 *** Keywords ***
 Click the menu button to open the sidebar.
-    Wait Until Element Is Visible    ${menu}    10
+    Wait Until Element Is Visible    ${menu}    timeout=10s
     Click Button    ${menu}
 Click the Business option in the menu.
-    Wait Until Element Is Visible    ${business}    10
+    Wait Until Element Is Visible    ${business}    timeout=10s
     Click Element    ${business}
 Click the Client option under Business.
     Click Element    ${client}
-To Verify that the "Client" page.
+To Verify that the "Client" page opens sucessfully.
     Location Should Be    ${client-url}
 
 Click the Add New Client button.
@@ -198,11 +198,16 @@ To verify the error message displayed in the name field.
 To verify the error message displayed in the image field.
     Page Should Contain   Image is required
 Click the back button
+    Wait Until Element Is Visible    ${back-but}    timeout=5s
     Click Button    ${back-but}
 To verify that it navigates to the client panel page.
     Location Should Be    ${client-url}    
 Enter a invalid-name in the input field.
     Input Text    ${search-name}    ${invalid-name}
 To verify that no records are found in the client list.
+<<<<<<< HEAD
+    Element Text Should Be    ${invalid-search-name-ver}    No entries found
+=======
     Element Text Should Be    ${invalid-search-name-ver}    No entries found
     
+>>>>>>> 6d72a07cef0bb8e57da316f866b207cababa854d

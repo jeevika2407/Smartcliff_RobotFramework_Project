@@ -33,3 +33,19 @@ validate login
 
     Close Browser
 
+validate logout Test
+    Open the browser with url
+    fill the login form    smart@gmail.com    1234
+    Wait Until Element Is Visible    ${profile}    10s
+    Click Element    ${profile}
+    Click Element    ${logout}
+    Sleep    1
+    Click Element    ${logout}
+    Wait Until Element Is Visible    xpath=//div[@class='MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-kkb3ro']    10s
+    ${front_text}=    Get Text    xpath=//div[@class='MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-kkb3ro']
+    Should Be Equal As Strings    ${front_text}    Log in to your account
+    Log    Successfully logged out and returned to login page.
+    Close Browser
+
+    
+

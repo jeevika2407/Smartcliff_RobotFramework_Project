@@ -4,6 +4,7 @@ Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Resource   ../Resources/WhyCanYouResources.robot
 Test Teardown    Close The Browser Session
+Library    DataDriver    file=../Utility/wcyFilter.csv    encoding=utf_8    dialect=unix
 
 *** Variables ***
 ${email}    smart@gmail.com  
@@ -32,7 +33,20 @@ Search Title By Name
 Edit by changing the title
     [Tags]    reg    edit
     verify Update Client Details After Editing
-    
+Delete item and checking with count
+    [Tags]    smoke    delete
+    Verify Delete Works By Checking Count
+check the back button
+    [Tags]    smoke    backk
+    Verify back button
+# validate the filter
+#     [Tags]    smoke    filter
+#     Verify that filter number type works
+Add Definition adding many times
+    [Tags]    smoke    inc
+    Add Definition increase in count
+
+
 *** Keywords ***
 Home Page Verify
     Open The Browser With URL
@@ -101,8 +115,53 @@ verify Update Client Details After Editing
     Enter the update button
     Verify that the modified title is listed in the search 
 
+Verify Delete Works By Checking Count
+    Open The Browser With URL
+    Fill The Login Form    ${email}    ${pwd}
+    Click The Menu Bar
+    Click Option Under Menu Bar
+    Add A New Hire
+    Fill The New Hire Form2
+    Click On The Add Definition
+    Fill The Add Definition Form
+    Click On Create
+    Search The Item
+    Click On The Delete Icon
+    Click On Confirm Delete
+    Verify Item Is Deleted
 
+Verify back button
+    Open The Browser With URL
+    Fill The Login Form    ${email}    ${pwd}
+    Click The Menu Bar
+    Click Option Under Menu Bar
+    Add A New Hire
+    Click on back button
+    Check back button is navigated to previous page
 
+# Verify that filter number type works
+#     [Arguments]    ${Filtertype}
+#     Open The Browser With URL
+#     Fill The Login Form    ${email}    ${pwd}
+#     Click The Menu Bar
+#     Click Option Under Menu Bar
+#     Add A New Hire
+#     Fill The New Hire Form
+#     Click On The Add Definition
+#     Fill The Add Definition Form
+#     Click On Create
+#     Verify that number of items in the page is same as filter type
 
-
+Add Definition increase in count
+    Open The Browser With URL
+    Fill The Login Form    ${email}    ${pwd}
+    Click The Menu Bar
+    Click Option Under Menu Bar
+    Add A New Hire
+    Fill The New Hire Form
+    Click On The Add Definition
+    Fill The Add Definition Form1
+    Again click on add definition
+    Fill The Add Definition Form2
+    Click On Create
 
