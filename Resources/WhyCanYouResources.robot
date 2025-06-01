@@ -24,7 +24,7 @@ ${wcy_icon}    xpath=//*[@id="drawer"]/div/ul/li[6]/div[2]/div/div/div/div[2]
 
 ${edit}    xpath=(//table//tbody//button)[1]
 ${update}    xpath=//div[@class='MuiBox-root css-1vfa8p7']/button
-${updated-name}    robot framework
+${updated-name}    txt robot framework
 
 ${up_tit}    xpath=(//div[@class='MuiCardContent-root css-1qw96cp']/preceding::input)[1]
 ${def-tit}    xpath=((//div[@class='MuiBox-root css-1coeexk']/parent::div/preceding-sibling::div)[2]/child::div)[1]/child::div/child::input
@@ -32,6 +32,10 @@ ${def-tit}    xpath=((//div[@class='MuiBox-root css-1coeexk']/parent::div/preced
 ${deleteIcon}    xpath=(//table//tbody//td//button)[2]
 ${confirmDelete}    xpath=//div[@class='MuiDialogActions-root MuiDialogActions-spacing css-33pgcr']//button[2]
 ${noEntryMSg}    xpath=//*[@id="root"]/div[1]/main/div[2]/div[2]/table/tbody/tr/td
+
+${back}    xpath=//div[@class='MuiBox-root css-1dfbuxp']/descendant::button
+${url}    xpath=https://smart-cliff-admin.vercel.app/business/wcy-hire-control
+
 *** Keywords ***
 Click The Menu Bar
     Wait Until Element Is Visible    ${menu}    timeout=10s
@@ -57,7 +61,7 @@ Add A New Hire
 
 Fill The New Hire Form
     Choose File    xpath=(//input[@type='file'])[1]    ${img}
-    Input Text    ${title}    txt selenium library
+    Input Text    ${title}    txt
     Click Element    ${type}
     Click Element    ${trainUs}
     Sleep    5s
@@ -154,6 +158,13 @@ Verify Item Is Deleted
     ${text}=    Get Text    ${noEntryMSg}
     Should Be Equal    ${text}    No entries found
 
+Click on back button
+    Click Button    ${back}
+    Sleep    5s
 
+Check back button is navigated to previous page
+    ${url1}=    Get Location
+    Log    Navigated URL after first back click: ${url1}
+    Should Contain    ${url1}    wcy-hire-control
 
       
