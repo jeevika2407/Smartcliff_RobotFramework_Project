@@ -67,7 +67,7 @@ Click on Add new Learning Journey button and Fill the Form
     Input Text    ${text_area}    ${desc}
     ${img_abs}=    Normalize Path    ${CURDIR}/${img}
     Choose File     //input[@type='file']    ${img_abs}
-    Wait Until Element Is Visible    ${submit_btn}    timeout=10s
+    sleep    5s
     Click Element    ${submit_btn}
 
 # Validates that error messages are displayed (i.e., form submission failed)
