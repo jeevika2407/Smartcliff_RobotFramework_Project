@@ -22,7 +22,7 @@ Access Job Position Page By clicking icon
     Verify that the "Job Position control" page loads successfully By clicking icons
 
 Add Job Position
-    [Tags]    smoke    job 
+    [Tags]    smoke    job1 
     Verify that a new job position can be added.
  Add a New Job-position with empty input
      [Tags]    smoke    job   
@@ -31,6 +31,16 @@ Add Job Position
 Search Job-position by Name
     [Tags]    smoke    job
     Verify the search functionality in the Job-Position control page.
+Search Job-position by invalid-Name
+    [Tags]    smoke    job
+    Verify the search functionality with providing the invalid name
+Edit Job-Position Details
+    [Tags]    smoke    job
+    To verify Update Job-Position Details After Editing
+Delete Job-Position
+    [Tags]    smoke    job
+    Verify that a Job-Position can be deleted.
+
 *** Keywords ***
 
 Verify that the "Job Position control" page loads successfully
@@ -59,6 +69,7 @@ Verify that a new job position can be added.
     Enter the Job Position title.
     Enter the Job Description.
     Click the job position Submit button.
+    Enter the Job Position in the input field.
     To verify the Job position added sucessfully
 To verify the Add functionality to provide a empty input
     [Arguments]    ${Position}    ${Job-Description}
@@ -78,4 +89,38 @@ Verify the search functionality in the Job-Position control page.
     Click the Job Position option under Business.
     Enter the Job Position in the input field.
     Verify that the entered Job Position is displayed correctly.
+Verify the search functionality with providing the invalid name
+    Open the browser with url
+    fill the login form    ${email}    ${password}
+    Click the menu button to open the sidebar.
+    Click the Career option in the menu.
+    Click the Job Position option under Business.
+    Enter an invalid job position name in the input field.
+    Verify that no job positions are displayed.
+To verify Update Job-Position Details After Editing
+    Open the browser with url
+    fill the login form    ${email}    ${password}
+    Click the menu button to open the sidebar.
+    Click the Career option in the menu.
+    Click the Job Position option under Business.
+    Enter the Job Position in the input field.
+    click edit icon
+    Update the details
+    Enter the updated Job Position in the input field.
+    Verify that the modified position and description details is updated.
+Verify that a Job-Position can be deleted.
+    Open the browser with url
+    fill the login form    ${email}    ${password}
+    Click the menu button to open the sidebar.
+    Click the Career option in the menu.
+    Click the Job Position option under Business.
+    Click the Add Job Position button.
+    Enter the Job Position title.
+    Enter the Job Description.
+    Click the job position Submit button.
+    Enter the Job Position in the input field.
+    Click the delete icon in job positon page.
+    Click the confirm button to proceed with the deletion.
+    To verify that the job-position should be deleted
     
+       

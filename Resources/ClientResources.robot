@@ -38,10 +38,10 @@ ${invalid-name}    abcdefgh
 ${invalid-search-name-ver}    xpath=//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-1a4b21o']/child::p
 *** Keywords ***
 Click the menu button to open the sidebar.
-    Wait Until Element Is Visible    ${menu}    10
+    Wait Until Element Is Visible    ${menu}    timeout=10s
     Click Button    ${menu}
 Click the Business option in the menu.
-    Wait Until Element Is Visible    ${business}    10
+    Wait Until Element Is Visible    ${business}    timeout=10s
     Click Element    ${business}
 Click the Client option under Business.
     Click Element    ${client}
@@ -198,6 +198,7 @@ To verify the error message displayed in the name field.
 To verify the error message displayed in the image field.
     Page Should Contain   Image is required
 Click the back button
+    Wait Until Element Is Visible    ${back-but}    timeout=5s
     Click Button    ${back-but}
 To verify that it navigates to the client panel page.
     Location Should Be    ${client-url}    
