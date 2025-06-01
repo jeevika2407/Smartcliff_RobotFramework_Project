@@ -25,9 +25,13 @@ ${Edit_checl}   xpath = (//*[@class="MuiTableBody-root css-1xnox0e"]//child::td[
 ${update_button}    xpath = (//*[@style="border: 2px dotted rgb(211, 211, 211); padding: 20px; border-radius: 8px;"]//child::button)[2]
 ${title1}   xpath = (//*[@style="border: 2px dotted rgb(211, 211, 211); padding: 20px; border-radius: 8px;"]//child::div[1]//input)[1]
 ${drop_down}    xpath = //*[@class="MuiSelect-select MuiTablePagination-select MuiSelect-standard MuiInputBase-input css-1cccqvr"]
-${drop_down_5}    xpath = (//*[@class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters MuiTablePagination-menuItem css-1gs62wq"])[1]
 ${num_of_stacks}    xpath = //*[@class="MuiTableBody-root css-1xnox0e"]//tr
 ${Cancle_button}    xpath = //button[@class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-n81xtf"]
+
+&{drop_down_options}    
+...    5=(//*[@class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters MuiTablePagination-menuItem css-1gs62wq"])[1]
+...    10=(//*[@class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters MuiTablePagination-menuItem css-1gs62wq"])[2]
+...    25=(//*[@class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters MuiTablePagination-menuItem css-1gs62wq"])[3]
 
 *** Keywords ***
 User visit the How It Work page By clicking on the three lines icon
@@ -113,7 +117,9 @@ Edit How It Work
     Should Be Equal    ${Titless}    ${Edit_element_locator}
 
 Validate Rows Per Page Dropdown
+    [Arguments]    ${rows_per_page}
     Click Element    ${drop_down}
-    Click Element    ${drop_down_5}
+    Click Element    ${drop_down_options['${rows_per_page}']}
+    Sleep    2s
     ${actual_count}=    Get Element Count    ${num_of_stacks}
-    Should Be True    ${actual_count} <= 5
+    Should Be True    ${actual_count} <= int(${rows_per_page})

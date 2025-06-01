@@ -13,34 +13,44 @@ ${Password}    1234
 
 *** Test Cases ***
 clicking on the three lines icon on Career Page
-    [Tags]    smoke  
+    [Tags]    smoke    careernavigation
+    [Documentation]    Working with Career Page by clicking on the three lines icon — by Gowri
     Working with Career Page By clicking on the three lines icon  
 clicking Icon on Career Page
-    [Tags]    sanity  
+    [Tags]    sanity    careernavigation
+    [Documentation]    Working with Career Page by clicking icon — by Gowri
     Working with Career Page By clicking icon 
 clicking on the Back Button on Career Page
-    [Tags]    regression  
+    [Tags]    regression    careerbackbutton
+    [Documentation]    Back to Career Page from the Add New Career — by Gowri
     Back to Career Page from the Add New Career 
 Create New Career with Valid Data
-    [Tags]    regression  
+    [Tags]    regression    careerform
+    [Documentation]    Add New Career with valid data — by Gowri
     Add New Career with Valid Data
 Search Career with Valid Data
-    [Tags]    regression  
+    [Tags]    regression    careersearchpositive
+    [Documentation]    Search Career with valid data — by Gowri
     Search Career Valid Data
 Search Career with Invalid Data
-    [Tags]    regression  
+    [Tags]    regression    careersearchnegative
+    [Documentation]    Search Career with invalid data — by Gowri
     Search Career Invalid Data
 Edit Career Entry
-    [Tags]    regression  
+    [Tags]    regression    careeredit
+    [Documentation]    Edit Career entry — by Gowri
     Edit Career
 Validate Rows Per Page Dropdown
-    [Tags]    regression  
+    [Tags]    regression    careerrowsperpage
+    [Documentation]    Validate Rows Per Page dropdown — by Gowri
     Validate Rows Per Page Dropdown
 Delete Career Entry
-    [Tags]    regression  
+    [Tags]    regression    careerdelete
+    [Documentation]    Delete Career entry — by Gowri
     Delete Career
 Delete Cancle Career Entry
-    [Tags]    regression  
+    [Tags]    regression    careerdeletecancel
+    [Documentation]    Cancel delete on Career entry — by Gowri
     Delete Cancle Career Entry
 *** Keywords ***
 Working with Career Page By clicking on the three lines icon
@@ -78,5 +88,5 @@ Search Career Invalid Data
 Validate Rows Per Page Dropdown
     LoginResources.fill the login form    ${Username}    ${Password}
     CareerResources.User visit the Career Page By clicking icon
-    HowItWorkResources.Validate Rows Per Page Dropdown
+    HowItWorkResources.Validate Rows Per Page Dropdown    5
     

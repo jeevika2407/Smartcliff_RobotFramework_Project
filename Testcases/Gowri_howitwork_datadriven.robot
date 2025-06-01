@@ -13,6 +13,7 @@ ${Password}    1234
 *** Test Cases ***
 Add New How It Work Entry with Invalid Data
     [Tags]    smoke    datadriven
+    [Documentation]    Add How It Work entry with invalid data using data-driven approach — by Gowri
     [Template]    Add New How It Work with Invalid Data    
     ${Heading}    ${Description_name}
 
