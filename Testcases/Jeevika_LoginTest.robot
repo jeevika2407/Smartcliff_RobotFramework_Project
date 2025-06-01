@@ -5,6 +5,7 @@ Resource   ../Resources/GenericResources.robot
 Resource   ../Resources/LoginResources.robot
 Test Template    validate login
 Test Teardown       Close the browser session
+Documentation     This test suite uses a data-driven approach to validate the login functionality of the SmartCliff Admin application. 
 
 *** Variables ***
 ${Username}
@@ -12,7 +13,7 @@ ${Password}
 
 *** Test Cases ***
 Validate Login Test    ${Username}    ${Password}
-    [Tags]    smoke    login
+    [Documentation]    Validates login using various combinations of username and password from the Excel sheet.
 
 *** Keywords ***
 validate login
@@ -31,20 +32,6 @@ validate login
         Location Should Be    https://smart-cliff-admin.vercel.app/adminHome
     END
 
-    Close Browser
-
-validate logout Test
-    Open the browser with url
-    fill the login form    smart@gmail.com    1234
-    Wait Until Element Is Visible    ${profile}    10s
-    Click Element    ${profile}
-    Click Element    ${logout}
-    Sleep    1
-    Click Element    ${logout}
-    Wait Until Element Is Visible    xpath=//div[@class='MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-kkb3ro']    10s
-    ${front_text}=    Get Text    xpath=//div[@class='MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-kkb3ro']
-    Should Be Equal As Strings    ${front_text}    Log in to your account
-    Log    Successfully logged out and returned to login page.
     Close Browser
 
     
