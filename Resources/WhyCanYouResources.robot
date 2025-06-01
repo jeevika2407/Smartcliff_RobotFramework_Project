@@ -36,6 +36,16 @@ ${noEntryMSg}    xpath=//*[@id="root"]/div[1]/main/div[2]/div[2]/table/tbody/tr/
 ${back}    xpath=//div[@class='MuiBox-root css-1dfbuxp']/descendant::button
 ${url}    xpath=https://smart-cliff-admin.vercel.app/business/wcy-hire-control
 
+${filter-type}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']
+${hire-from-us}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li[1]
+${train-from-us}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li[2]
+${institute}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li[3]
+
+
+${tit2}    xpath=(//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/input)[3]
+${textbox2}    xpath=(//div/textarea)[5]
+
+
 *** Keywords ***
 Click The Menu Bar
     Wait Until Element Is Visible    ${menu}    timeout=10s
@@ -167,4 +177,74 @@ Check back button is navigated to previous page
     Log    Navigated URL after first back click: ${url1}
     Should Contain    ${url1}    wcy-hire-control
 
-      
+# Verify that number of items in the page is same as filter type
+#      [Arguments]    ${Filtertype}
+#     Log To Console    ${Filtertype}
+    
+#     IF    '${Filtertype}' == 'Train From Us'
+#         Wait Until Element Is Visible    ${train-from-us}    timeout=10
+#         Click Element    ${train-from-us}
+#         ${elements}=    Get WebElements    ${filter-type}
+#         ${length}=    Get Length    ${elements}
+#         IF    ${length} == 0
+#             Log To Console    No elements present
+#         ELSE
+#             ${found}=    Set Variable    True
+#             FOR    ${element}    IN    @{elements}
+#             ${text}=    Get Text    ${element}
+#                 IF    '${text}'!='Train From Us'
+#                     ${found}=    Set Variable    False
+#                     BREAK
+#                 END   
+#                 Should Be True    ${found}
+#             END
+#         END
+#     END
+#     IF    '${Filtertype}' == 'Institute'
+#         Wait Until Element Is Visible    ${institute}    timeout=10
+#         Click Element    ${institute}
+#         ${elements}=    Get WebElements    ${filter-type}
+#         ${found}=    Set Variable    True
+#         FOR    ${element}    IN    @{elements}
+#         ${text}=    Get Text    ${element}
+#             IF    '${text}'!='Institute'
+#                 ${found}=    Set Variable    False
+#                 BREAK
+#             END   
+#             Should Be True    ${found}
+#         END
+#     END      
+#     IF    '${Filtertype}' == 'Home'
+#         Wait Until Element Is Visible    ${hire-from-us}    timeout=10
+#         Click Element    ${hire-from-us}
+#         ${elements}=    Get WebElements    ${filter-type}
+#         ${length}=    Get Length    ${elements}
+#         IF    ${length} == 0
+#             Log To Console    No elements present
+#         ELSE
+#             ${found}=    Set Variable    True
+#             FOR    ${element}    IN    @{elements}
+#             ${text}=    Get Text    ${element}
+#                 IF    '${text}'!='Home'
+#                     ${found}=    Set Variable    False
+#                     BREAK
+#                 END   
+#                 Should Be True    ${found}
+#             END
+#         END
+#     END 
+
+Fill The Add Definition Form1
+    Choose File    xpath=(//input[@type='file'])[2]    ${icon}
+    Input Text    ${tit}    this is description of selenium lib
+    Input Text    ${textbox}    complete Robot Framework test file using the SeleniumLibrary
+    Sleep    5s
+
+Again click on add definition
+    Click Button    ${addDef}
+
+Fill The Add Definition Form2
+    Choose File    xpath=(//input[@type='file'])[3]    ${icon}
+    Input Text    ${tit2}    this is description of selenium lib
+    Input Text    ${textbox2}    complete Robot Framework test file using the SeleniumLibrary
+    Sleep    5s
