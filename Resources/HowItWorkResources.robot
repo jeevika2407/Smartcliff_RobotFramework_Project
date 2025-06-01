@@ -43,16 +43,14 @@ Add New How It Work with Valid Data
     [Arguments]    ${Heading}    ${Descriptions}
     ${row_count}=    Get Element Count    ${count}
     Click Element    ${AddNer}
-    Input Text    ${Title-path}    ${Heading}
-    Input Text    ${Description}    ${Descriptions}      
-    Click Element    ${TYPE}
-    Click Element    ${Train_From_Us}
-    Sleep    2
     Click Element    ${DROPZONE_AREA}
     Sleep    1
     ${file_input}=    Set Variable    css:input[type="file"][accept="image/*"]
     Choose File    ${file_input}    ${IMAGE_PATH}
-    sleep    2
+    Input Text    ${Title-path}    ${Heading}
+    Input Text    ${Description}    ${Descriptions}      
+    Click Element    ${TYPE}
+    Click Element    ${Train_From_Us}
     Click Element    ${submit}
     Wait Until Element Is Visible    ${count}    timeout=20s
     ${row_count1}=    Get Element Count    ${count}
@@ -63,18 +61,16 @@ Add New How It Work with Invalid Data
     ${row_count}=    Get Element Count    ${count}
     ${initial_url}=    Get Location
     Click Element    ${AddNer}
-    Input Text    ${Title-path}    ${Heading}
-    Input Text    ${Description}    ${Description_name}
-    Click Element    ${TYPE}
-    Click Element    ${Train_From_Us}
-    Sleep    2
     Click Element    ${DROPZONE_AREA}
     Sleep    1
     ${file_input}=    Set Variable    css:input[type="file"][accept="image/*"]
     Choose File    ${file_input}    ${IMAGE_PATH}
-    sleep    2
+    Input Text    ${Title-path}    ${Heading}
+    Input Text    ${Description}    ${Description_name}
+    Click Element    ${TYPE}
+    Click Element    ${Train_From_Us}
     Click Element    ${submit}
-    sleep    5
+    Sleep    5
     ${current_url}=    Get Location
     Should Not Be Equal    ${initial_url}    ${current_url}
 
