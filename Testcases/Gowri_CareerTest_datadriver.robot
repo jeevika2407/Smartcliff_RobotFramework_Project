@@ -14,6 +14,7 @@ ${Password}    1234
 *** Test Cases ***
 Create New Career with Valid Data
     [Tags]    regression    datadriven
+    [Documentation]    Data-driven test to create a new career with various inputs — by Gowri
     [Template]    Add New Career with Invalid Data
     ${title_name}    ${Description_name}    ${subtitle_name}    ${subdescription_name}
 

@@ -12,33 +12,43 @@ ${Password}    1234
 *** Test Cases ***
 clicking on the three lines icon on How It Work Page
     [Tags]    smoke    howitworknavigation
+    [Documentation]    Click three lines icon on How It Work page — by Gowri
     Working with How It Work Page By clicking on the three lines icon    
 Clicking Icon on How It Work Page
     [Tags]    sanity    howitworknavigation
-    Working with How It Work Page By clicking icon        
+    [Documentation]    Click icon on How It Work page — by Gowri
+    Working with How It Work Page By clicking icon         
 Add New How It Work with Valid Data
     [Tags]    negative    howitworkform
+    [Documentation]    Add new How It Work with valid data — by Gowri
     Add New How It Work with Valid Data      
 Search How It Work with Valid Data
     [Tags]    regression    howitworksearchpositive
+    [Documentation]    Search How It Work with valid data — by Gowri
     Search How It Work with Valid Data         
 Search How It Work with Invalid Data
     [Tags]    regression    howitworksearchnegative
+    [Documentation]    Search How It Work with invalid data — by Gowri
     Search How It Work with Invalid Data      
 Edit How It Work    
     [Tags]    regression    howitworkedit
+    [Documentation]    Edit How It Work entry — by Gowri
     Edit How It Work     
 Delete How It Work Entry
     [Tags]    regression    howitworkdelete
+    [Documentation]    Delete How It Work entry — by Gowri
     Delete How It Work
 Validate Rows Per Page Dropdown
     [Tags]    regression    howitworkrowsperpage
+    [Documentation]    Check Rows Per Page dropdown — by Gowri
     Validate Rows Per Page Dropdown
 User will visit the Career Page By clicking Back which is in the Add New Career Page
     [Tags]    regression    howitworkbackbutton
+    [Documentation]    Go back to Career page from Add New Career — by Gowri
     User will visit the Career Page By clicking Back which is in the Add New Career Page    
 Delete Cancle How It Work Entry
     [Tags]    regression    howitworkdeletecancel
+    [Documentation]    Cancel delete How It Work entry — by Gowri
     Delete Cancle How It Work Entry
 
 *** Keywords ***
@@ -93,7 +103,7 @@ Validate Rows Per Page Dropdown
     GenericResources.Open the browser with url
     LoginResources.fill the login form    ${Username}    ${Password}
     HowItWorkResources.User visit the How It Work page By clicking icon
-    HowItWorkResources.Validate Rows Per Page Dropdown
+    HowItWorkResources.Validate Rows Per Page Dropdown    5
     GenericResources.close the browser session
 User will visit the Career Page By clicking Back which is in the Add New Career Page
     GenericResources.Open the browser with url
