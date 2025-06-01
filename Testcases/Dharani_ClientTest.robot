@@ -5,55 +5,75 @@ Resource   ../Resources/LoginResources.robot
 Resource    ../Resources/ClientResources.robot
 Library    DataDriver    file=../Utility/Filterdata.csv    encoding=utf_8    dialect=unix
 Test Teardown       Close the browser session
+Documentation     This test suite validates the full functionality of the "Client" module in the SmartCliff Admin application.
 
 * Variables *
 ${Filtertype}
 
 *** Test Cases ***
 
+*** Test Cases ***
 Access Client Page
+    [Documentation]    Verifies that the Client page loads successfully after logging in and navigating via sidebar.
     [Tags]    smoke    client
     Verify that the "Client" page loads successfully
 
 Access Client Page By clicking icon
+    [Documentation]    Verifies that the Client page loads successfully by clicking icons directly, without using sidebar menu.
     [Tags]    smoke    client    
     Verify that the "Client" page loads successfully By clicking icons
 
 Add New Client
+    [Documentation]    Verifies that a new client can be successfully added with valid inputs.
     [Tags]    smoke    client 
     Verify that a new client can be added.
 
 Add a New Client with Invalid name
+    [Documentation]    Verifies that an error message is shown when an invalid name is entered.
     [Tags]    smoke    client    
     Verify that an invalid-name error message is disaplayed in the client name field
 
 Add a New Client without providing image
+    [Documentation]    Validates that an error is shown when the image field is left empty during client creation.
     [Tags]    smoke    client    
     Verify that, without providing an image, the error message is displayed correctly. 
+
 Access the back Button
+    [Documentation]    Verifies that the back button in Add Client form works and navigates back to the client list.
     [Tags]    smoke    client  
     To verify the back button in the Add-client-form works correctly
 
 Access Clear functionality
+    [Documentation]    Verifies that the 'Clear Filters' button removes previously applied filters.
     [Tags]    smoke    client
     Validate 'Clear Filters' Functionality
+
 Search Client by Name
+    [Documentation]    Validates that the search functionality works when a valid client name is entered.
     [Tags]    smoke    client
-    Verify the search f unctionality.
+    Verify the search functionality.
+
 Search Client by invalid-Name
+    [Documentation]    Verifies that no records are shown when an invalid client name is searched.
     [Tags]    smoke    client1    
     Verify the search functionality with invalid name.
+
 Filter by Type
-     [Tags]    smoke    client  
-     [Template]    Verify that clients can be filtered by type.
-     ${Filtertype}
+    [Documentation]    Uses data-driven testing to validate filtering clients by different types.
+    [Tags]    smoke    client  
+    [Template]    Verify that clients can be filtered by type.
+    ${Filtertype}
+
 Edit Client Details
+    [Documentation]    Validates that editing and updating client details reflects correctly in the UI.
     [Tags]    smoke    client
     To verify Update Client Details After Editing
+
 Delete Client
+    [Documentation]    Verifies that a client can be deleted and no longer appears in the list after confirmation.
     [Tags]    smoke    client1    delete  
     Verify that a client can be deleted.
-
+    
 *** Keywords ***
 
 Verify that the "Client" page loads successfully

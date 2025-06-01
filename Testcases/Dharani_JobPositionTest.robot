@@ -16,30 +16,43 @@ ${Job-Description}
 Access Job Position Control page
     [Tags]    smoke    job
     Verify that the "Job Position control" page loads successfully
+    [Documentation]    Verify that the Job Position control page loads successfully via menu navigation.
 
 Access Job Position Page By clicking icon
-    [Tags]    smoke    job 
+    [Tags]    reg    job 
     Verify that the "Job Position control" page loads successfully By clicking icons
+    [Documentation]    Verify that the Job Position control page loads successfully via clicking menu icons.
 
 Add Job Position
-    [Tags]    smoke    job1 
+    [Tags]    reg    job1 
     Verify that a new job position can be added.
+     [Documentation]    Verify that a new job position can be added successfully with valid inputs.
+
  Add a New Job-position with empty input
      [Tags]    smoke    job   
      [Template]     To verify the Add functionality to provide a empty input
      ${Position}    ${Job-Description}
+
 Search Job-position by Name
-    [Tags]    smoke    job
+    [Tags]    sanity    job
     Verify the search functionality in the Job-Position control page.
+    [Documentation]    Verify the search functionality returns correct results for valid job position names.
+
 Search Job-position by invalid-Name
     [Tags]    smoke    job
     Verify the search functionality with providing the invalid name
+     [Documentation]    Verify the search functionality behaves correctly when an invalid job position name is provided.
+
 Edit Job-Position Details
-    [Tags]    smoke    job
+    [Tags]    sanity    job
     To verify Update Job-Position Details After Editing
+    [Documentation]    Verify that existing job position details can be updated successfully.
+
 Delete Job-Position
     [Tags]    smoke    job
     Verify that a Job-Position can be deleted.
+     [Documentation]    Verify that a job position can be deleted and removed from the list.
+
 
 *** Keywords ***
 
