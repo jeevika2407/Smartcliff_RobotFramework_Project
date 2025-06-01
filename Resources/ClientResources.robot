@@ -205,4 +205,3 @@ Enter a invalid-name in the input field.
     Input Text    ${search-name}    ${invalid-name}
 To verify that no records are found in the client list.
     Element Text Should Be    ${invalid-search-name-ver}    No entries found
-    
