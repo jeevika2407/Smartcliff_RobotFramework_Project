@@ -35,6 +35,9 @@ Edit by changing the title
 Delete item and checking with count
     [Tags]    smoke    delete
     Verify Delete Works By Checking Count
+check the back button
+    [Tags]    smoke    backk
+    Verify back button
     
 *** Keywords ***
 Home Page Verify
@@ -119,11 +122,12 @@ Verify Delete Works By Checking Count
     Click On Confirm Delete
     Verify Item Is Deleted
 
-
-
-
-
-
-
-
+Verify back button
+    Open The Browser With URL
+    Fill The Login Form    ${email}    ${pwd}
+    Click The Menu Bar
+    Click Option Under Menu Bar
+    Add A New Hire
+    Click on back button
+    Check back button is navigated to previous page
 
