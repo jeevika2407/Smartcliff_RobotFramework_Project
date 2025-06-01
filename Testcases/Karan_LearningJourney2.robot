@@ -3,7 +3,7 @@ Documentation    Learning Journey Test Cases for Smartcliff Admin Website to Edi
 Library    SeleniumLibrary
 Resource         ../Resources/LoginResources.robot
 Resource         ../Resources/GenericResources.robot
-Resource         ../Resources/Karan_LearningJourneyResources.robot
+Resource         ../Resources/LearningJourneyResources.robot
 Test Setup       Open the browser with url
 Test Teardown    Close the browser session
 

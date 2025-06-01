@@ -4,7 +4,7 @@ Library             SeleniumLibrary
 Library             DataDriver    file=../Utility/CurrentAvailability.xlsx    sheet_name=Sheet1
 Resource            ../Resources/LoginResources.robot
 Resource           ../Resources/GenericResources.robot
-Resource            ../Resources/Karan_CurrentAvaliablityResources.robot
+Resource            ../Resources/CurrentAvaliablityResources.robot
 
 Test Template       Validate Current Availability Data Entry
 Test Setup          Open the browser with url

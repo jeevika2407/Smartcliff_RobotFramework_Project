@@ -4,7 +4,7 @@ Library          SeleniumLibrary
 Library          DataDriver    file=../Utility/LPEXCEL.xlsx    sheet_name=Sheet1
 Resource         ../Resources/LoginResources.robot
 Resource         ../Resources/GenericResources.robot
-Resource         ../Resources/Karan_LearningJourneyResources.robot
+Resource         ../Resources/LearningJourneyResources.robot
 Test Template    Add Learning Journey From Excel
 Test Setup       Open the browser with url
 Test Teardown    Close the browser session
