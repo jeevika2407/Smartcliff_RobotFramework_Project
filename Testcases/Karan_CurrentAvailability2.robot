@@ -3,7 +3,7 @@ Documentation       Valid and Invalid Current Availability Data
 Library             SeleniumLibrary
 Resource            ../Resources/LoginResources.robot
 Resource            ../Resources/GenericResources.robot
-Resource            ../Resources/CurrentAvaliablityResources.robot
+Resource            ../Resources/Karan_CurrentAvaliablityResources.robot
 Test Setup          Open the browser with url
 Test Teardown       Close the browser session
 
