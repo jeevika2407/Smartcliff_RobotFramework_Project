@@ -34,7 +34,6 @@ ${url}    xpath=https://smart-cliff-admin.vercel.app/business/wcy-hire-control
 ${tit2}    xpath=(//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/input)[3]
 ${textbox2}    xpath=(//div/textarea)[5]
 
-
 *** Keywords ***
 Click The Menu Bar
     Wait Until Element Is Visible    ${menu}    timeout=10s
@@ -181,5 +180,4 @@ Fill The Add Definition Form2
     Input Text    ${textbox2}    complete Robot Framework test file using the SeleniumLibrary
     Sleep    5s
 
-    
     

@@ -14,6 +14,7 @@ ${Password}
 *** Test Cases ***
 Validate Login Test    ${Username}    ${Password}
     [Documentation]    Validates login using various combinations of username and password from the Excel sheet.
+    [Tags]    sanity    login  
 
 *** Keywords ***
 validate login
