@@ -5,13 +5,12 @@ Resource   ../Resources/LoginResources.robot
 Resource   ../Resources/WhyCanYouResources.robot
 Test Teardown    Close The Browser Session
 Library    DataDriver    file=../Utility/wcyFilter.csv    encoding=utf_8    dialect=unix
-Documentation    This test suite covers end-to-end validation of the 'Why Can You' (WCY) feature, including login, navigation, form handling, editing, deletion, and definition management in the SmartCliff admin panel.
+Documentation    This test suite covers end-to-end validation of the 'Why Can You' feature, including login, navigation, form handling, editing, deletion, and definition management in the SmartCliff admin panel.
 
 *** Variables ***
 ${email}    smart@gmail.com  
 ${pwd}      1234
 ${expected_name}    txt
-${filterType}
 
 *** Test Cases ***
 Verify It Reached Home Page 
