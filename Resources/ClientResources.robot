@@ -205,9 +205,4 @@ To verify that it navigates to the client panel page.
 Enter a invalid-name in the input field.
     Input Text    ${search-name}    ${invalid-name}
 To verify that no records are found in the client list.
-<<<<<<< HEAD
     Element Text Should Be    ${invalid-search-name-ver}    No entries found
-=======
-    Element Text Should Be    ${invalid-search-name-ver}    No entries found
-    
->>>>>>> 6d72a07cef0bb8e57da316f866b207cababa854d
