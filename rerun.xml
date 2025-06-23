@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-02T09:20:32.664210" rpa="false" schemaversion="5">
+<suite id="s1" name="Jeevika Logout" source="D:\smartcliff_project\Smartcliff_RobotFramework_Project\Testcases\Jeevika_Logout.robot">
+<test id="s1-t1" name="validate successful logout" line="11">
+<kw name="Open The Browser With URL" owner="GenericResources" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-02T09:20:33.135362" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F210DAB0E0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-02T09:20:33.134983" elapsed="0.000426"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-02T09:20:33.135572" elapsed="0.000141"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-02T09:20:33.135808" elapsed="0.000419"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-02T09:20:33.136339" elapsed="0.000118"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-02T09:20:33.136542" elapsed="0.000095"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-02T09:20:33.136719" elapsed="0.000090"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-02T09:20:33.137153" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-02T09:20:33.136910" elapsed="0.000298"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-06-02T09:20:33.137298" elapsed="0.000123"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T09:20:33.137809" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T09:20:33.137544" elapsed="121.085378"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-06-02T09:22:34.223297" elapsed="0.010170"/>
+</kw>
+<status status="PASS" start="2025-06-02T09:20:33.134248" elapsed="121.099471"/>
+</kw>
+<kw name="fill the login form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T09:22:34.237679" level="INFO">Typing text 'smart@gmail.com' into text field 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']'.</msg>
+<msg time="2025-06-02T09:22:39.504450" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-02T09:22:39.504851" level="FAIL">Element with locator 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']' not found.</msg>
+<arg>${user}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2025-06-02T09:22:34.236580" elapsed="5.305641">Element with locator 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']' not found.</status>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<arg>${pass}</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T09:22:39.542578" elapsed="0.000061"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T09:22:39.542812" elapsed="0.000062"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-06-02T09:22:39.543026" elapsed="0.000044"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="FAIL" start="2025-06-02T09:22:34.235744" elapsed="5.307538">Element with locator 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']' not found.</status>
+</kw>
+<kw name="Logout From Current Session" owner="LogoutResource">
+<status status="NOT RUN" start="2025-06-02T09:22:39.544241" elapsed="0.000101"/>
+</kw>
+<kw name="Close The Browser Session" owner="GenericResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-02T09:22:39.545394" elapsed="2.197621"/>
+</kw>
+<status status="PASS" start="2025-06-02T09:22:39.544950" elapsed="2.198341"/>
+</kw>
+<doc>Logs into the application using valid credentials and verifies that the user can successfully log out.</doc>
+<tag>logout</tag>
+<tag>Regression</tag>
+<status status="FAIL" start="2025-06-02T09:20:33.133334" elapsed="128.610342">Element with locator 'xpath=//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1bp1ao6']/descendant::input[@name='email']' not found.</status>
+</test>
+<doc>Test to logout</doc>
+<status status="FAIL" start="2025-06-02T09:20:32.665892" elapsed="129.079637"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">logout</stat>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat name="Jeevika Logout" id="s1" pass="0" fail="1" skip="0">Jeevika Logout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
