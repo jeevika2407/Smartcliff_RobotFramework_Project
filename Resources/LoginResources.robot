@@ -19,4 +19,3 @@ fill the login form
     Input Password    ${pass}    ${Password}
     Click Button    ${login}
     Sleep    10
-
