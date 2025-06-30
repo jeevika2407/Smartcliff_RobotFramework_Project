@@ -169,7 +169,7 @@ Fill The Add Definition Form1
     Choose File    xpath=(//input[@type='file'])[2]    ${icon}
     Input Text    ${tit}    this is description of selenium lib
     Input Text    ${textbox}    complete Robot Framework test file using the SeleniumLibrary
-    Sleep    5s
+    Sleep    10s
 
 Again click on add definition
     Click Button    ${addDef}
